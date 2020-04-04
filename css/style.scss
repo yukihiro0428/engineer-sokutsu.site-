@@ -1,0 +1,9 @@
+/* 初期設定用 */
+@import "_import/_initial.scss";
+/* 関数用 */
+@import "_import/_mixin-function.scss";
+
+@import "./top";
+@import "./profile";
+@import "./app";
+@import "./contact";

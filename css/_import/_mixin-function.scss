@@ -1,0 +1,277 @@
+// 色関係
+$color-orange : rgb(213, 90, 0);
+$color-blue: rgb(28, 80, 114);
+
+// メディアクエリー
+$layout-width-inner: 999px;
+$layout-rsp: 80%;
+$rsp: 92vw;
+// ブレークポイント
+$breakpoints: (
+      "xs": "screen and (max-width: 320px)",
+      "sp": "screen and (max-width: 767px)",
+    //  "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
+      "pc": "screen and (max-width: #{$layout-width-inner})",
+"pc2-less": "screen and (max-width: 1349px)",
+     "pc2": "screen and (min-width: 1350px)",//1300px以上の幅の場合は
+);
+//rsp padding:20px, margin-bottom:30pxで統一
+// PC → インナーの幅まで
+// タブレット → インナーの幅からiPad（768px）まで
+// スマホ → iPadより小さい（767px）からiPhone SE（320px）まで
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  }
+
+
+//中央配置
+@mixin center-poji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+@mixin center-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// xdのフォント決め用
+//xd 16(上), AV75, ↕24, bold(上)
+//blacl:800, Regular:400
+//Medium  500
+@mixin font($size, $letter-spacing, $line-height, $weight) {
+  font-size: ($size/10) + rem;
+  letter-spacing: $size * ($letter-spacing/100) + px;
+  line-height: $line-height / $size;
+  font-weight: $weight;
+}
+
+//z-index
+  $layer: (
+    drawer-menu          : 100,
+    drawer-header__right : 50,
+    drawer-nav-sp-menu   : 30,
+    header               : 20,
+    drawer-over-lay      : 2,//プロフィールページの「about me」箇所にも適応 問い合わせのselect:beforeも
+    // default              : 1
+    back                 : -1
+  );
+@mixin z-index($key) {
+  z-index: map-get($layer, $key);
+}
+// @include z-index(nav-sp-menu);書き方
+
+// グラデーション
+@mixin gra-blue {
+  background: linear-gradient(to left, #0083B0, #36D1DC);
+  background: -moz-linear-gradient(right, #0083B0, #36D1DC);
+  background: -webkit-linear-gradient(right, #0083B0, #36D1DC);
+}
+@mixin gra-orange {
+  background: linear-gradient(to left, #E65C00, #F9D423);
+  background: -moz-linear-gradient(right, #E65C00, #F9D423);
+  background: -webkit-linear-gradient(right, #E65C00, #F9D423);
+}
+
+@mixin gra-black {
+  background: linear-gradient(to left, rgb(16, 16, 16), rgb(96, 96, 96));
+  background: -moz-linear-gradient(right, rgb(16, 16, 16), rgb(96, 96, 96));
+  background: -webkit-linear-gradient(right, rgb(16, 16, 16), rgb(96, 96, 96));
+}
+
+@mixin gra-head {
+  background: linear-gradient(to left, rgba(213, 90, 0, 0.3), rgba(0, 103, 170, 0.3));
+  background: -moz-linear-gradient(right, rgba(213, 90, 0, 0.3), rgba(0, 103, 170, 0.3));
+  background: -webkit-linear-gradient(right, rgba(213, 90, 0, 0.3), rgba(0, 103, 170, 0.3));
+}
+
+@mixin hover-bg {
+  opacity: 0.75;
+  transition: .5s;
+}
+
+@mixin hover-tx($color) {
+  color: lighten($color, 20%);
+  transition: .5s;
+}
+
+@mixin button {
+  border-radius: 25px;
+  @include font(16, 0, 24, 500);
+  color: rgb(255, 255, 255);
+  padding: 7px 30px 9px 30px;
+  text-align: center;
+  position: relative;
+  &:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f054";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    -ms-transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+  }
+}
+
+//見出し-左青
+@mixin heading-blue {
+  @include font(18, 0, 27, bold);
+  width: 100%;
+  padding: 5px 25px 5px 40px;
+  box-sizing: border-box;
+  background: rgb(242, 242, 242);
+  background-image: url(../img/13-min.png);
+  background-repeat: no-repeat;
+  background-size: 30px 100%;
+  margin-bottom: 30px;
+}
+
+//背景-格子
+@mixin bg-stripe($color, $transmission) {
+  background-color : $color;
+  background-image:
+  repeating-linear-gradient( 
+      60deg,
+      rgba(241, 241, 241, $transmission),
+      transparent 2px 20px
+  ),
+  repeating-linear-gradient(
+      -60deg,
+      rgba(241, 241, 241, $transmission),
+      transparent 2px 20px
+  ),
+  repeating-linear-gradient(
+      0deg,
+      rgba(241, 241, 241, $transmission),
+      transparent 2px 20px
+  );
+}
+
+//テキストの初期化 
+@mixin text-reset {
+  .text-test {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgb(247, 247, 247);
+    background-image: none;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 0.4em 0.8em;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .text-test:focus {
+    border: 1px solid rgba(0, 0, 0, 0.32);
+    box-shadow: none;
+    outline: none;
+  }
+}
+//セレクトの初期化
+@mixin select-reset {
+  .select-test {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgb(247, 247, 247);
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 0;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 0.4em 0.8em;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .select-test::-ms-expand {
+    display: none;
+  }
+  .select-test:focus {
+    border: 1px solid rgb(204, 204, 204);
+    box-shadow: none;
+    outline: none;
+    // background-color: rgb(255, 255, 255);
+  }
+}
+//テキストエリアの初期化
+@mixin textarea-reset {
+  .textarea-text {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgb(247, 247, 247);
+    background-image: none;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 0.4em 0.8em;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .textarea-text:focus {
+    border: 1px solid rgb(204, 204, 204);
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+//チェックボックスの初期化
+@mixin check-reset {
+  .check-test {
+    display: none;
+  }
+  .check-test + span {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0.2em 0;
+    padding: 0 0 0 1.2em;
+    position: relative;
+  }
+  .check-test + span::before {
+    -webkit-transform: translateY(-50%);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 2px;
+    content: "";
+    display: block;
+    height: 1em;
+    left: -10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1em;
+  }
+  .check-test + span::after {
+    -webkit-transform: translateY(-50%) rotate(-45deg);
+    border-bottom: 3px solid rgb(0, 154, 163);
+    border-left: 3px solid rgb(0, 154, 163);
+    content: "";
+    display: block;
+    height: 0.6em;
+    left: -10px;
+    margin-top: -0.4em;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    transition: all 0.3s ease 0s;
+    width: 1em;
+  }
+  .check-test:checked + span::after {
+    opacity: 1;
+  }
+}

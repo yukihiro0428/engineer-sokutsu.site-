@@ -1,0 +1,227 @@
+//初期設定
+html {
+    font-size: 62.5%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans JP', sans-serif;
+	min-width: 300px;
+	font-size: 1.6rem;  
+	box-sizing: border-box;
+	font-weight: 300;
+	line-height: 1.6;
+	overflow-x: hidden;
+  	background: #fffffe;
+	color: rgb(16, 16, 16);
+}
+article,
+aside,
+footer,
+header,
+nav,
+section,
+main {
+	display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+em,
+small,
+strong,
+sub,
+sup,
+mark,
+del,
+ins,
+strike,
+abbr,
+dfn,
+blockquote,
+q,
+cite,
+code,
+pre,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+div,
+section,
+article,
+main,
+aside,
+nav,
+header,
+hgroup,
+footer,
+img,
+figure,
+figcaption,
+address,
+time,
+audio,
+video,
+canvas,
+iframe,
+details,
+summary,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+ul {
+    padding: 0;
+    list-style: none;
+    font-size:0;
+}
+li {
+  display: inline-block;
+  font-size: 16px;
+  list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    width: inherit;
+    height: inherit;
+	outline: none;
+}
+
+img {
+	border: none;
+	width: inherit;
+  	height: inherit;
+	vertical-align: top;
+}
+table {
+	// border: 1px solid #eee;
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+	width: 100%;
+}
+
+th,
+td {
+	// border: 1px solid #eee;
+	padding: 4px 6px;
+	text-align: left;
+	vertical-align: top;
+}
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote::after,
+blockquote::before,
+q::after,
+q::before {
+	content: "";
+	content: none;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+form button {
+	-webkit-appearance: none;
+	background-color: #d81f32;
+	background-image: none;
+	border: none;
+	border-radius: 0;
+	box-shadow: 0.0625em 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.16);
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 16px;
+	margin: 0;
+	padding: 0.6em 2em;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+	width: auto;
+}
+
+form button:hover,
+form button:focus {
+	outline: none;
+}
+
+form button:hover {
+	opacity: 0.6;
+}
+
+form button ::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+
+
+textarea:hover,
+textarea:focus {
+	outline: none;
+}
+
+textarea:focus {
+	border-color: #e2e2e2;
+	box-shadow: none;
+	outline: none;
+}
+
+textarea ::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background-position: right 6px center;
+	background-repeat: no-repeat;
+	background-size: 24px;
+	border: 1px solid #e2e2e2;
+	border-radius: 0;
+	color: inherit;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 1em;
+	padding: 0.4em 2.4em 0.4em 0.8em;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+select:focus {
+	border-color: #e2e2e2;
+	box-shadow: none;
+	outline: none;
+}

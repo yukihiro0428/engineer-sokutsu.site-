@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>エンジニアの巣窟</title>
+  <link type="text/css" rel="stylesheet" href="./css/style.css?ver=20200227">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+      <nav>
+        <p id="logo_js"><a href=""><img src="img/header_logo-min.png" alt="ヘッダーロゴ"></a></p>
+        <div class="menu-trigger">
+          <span class="menu-trigger-span"></span>
+          <span class="menu-trigger-span"></span>
+          <span class="menu-trigger-span"></span>
+        </div>
+        <div class="header__list">
+          <ul class="header__list__ul" id="nav_js">
+            <li class="header__list__ul__li"><a href="">トップ</a></li>
+            <li class="header__list__ul__li"><a href="">プロフィール</a></li>
+            <li class="header__list__ul__li"><a href="">開催イベント</a></li>
+            <li class="header__list__ul__li"><a href="">企業の方はこちら</a></li>
+            <li class="header__list__ul__li"><a href="">登壇者の方はこちら</a></li>
+            <li class="header__list__ul__li"><a href="">お問合せはこちら</a></li>
+          </ul>
+        </div>
+        <div class="header__icon">
+          <div class="header__icon__twitter" id="twitter_js"><a href=""><i class="fab fa-twitter fa-lg"></i></a></div>
+          <div class="header__icon__connpass"><a href=""><img src="img/connpass-min.png" alt="connpass"></a></div>
+        </div>
+        <div class="overlay"></div><!-- sp時の横からのスライド表示 -->
+      </nav>
+    </header>
+
+    <!-- トップ画像、共通class --> 
+    <section class="profileimg">
+        <p class="profile__img"><img src="img/titlebg-min.png" alt="プロフィール画像"></p>
+        <p class="profile__title"><img src="img/top_titlelogo2-min.png" alt="タイトル"></p>
+    </section>
+
+   <article class="contact" id="scroll-js">
+       <h1 class="contact__h1">CONTACT</h1>
+       <p class="contact__p">3営業日以内に返信が届かない場合は、大変お手数をお掛けいたしますが、再度ご連絡くださいますようお願いいたします。</p>
+       <div class="contactabout">
+           <div class="contactabout__list">
+               <p class="contactabout__list__ul">
+                   <span class="title">会社名</span>
+                   <span class="check--any">任意</span>
+                   <span class="text"><input class="text-test" type="text"></span>
+               </p>
+               <p class="contactabout__list__ul">
+                    <span class="title">お名前</span>
+                    <span class="check--must">必須</span>
+                    <span class="text"><input class="text-test" type="text"></span>
+                </p>
+                <p class="contactabout__list__ul">
+                    <span class="title">ふりがな</span>
+                    <span class="check--any">任意</span>
+                    <span class="text"><input class="text-test" type="text"></span>
+                </p>
+                <p class="contactabout__list__ul">
+                    <span class="title">メールアドレス</span>
+                    <span class="check--must">必須</span>
+                    <span class="text"><input class="text-test" type="email"></span>
+                </p>
+                <p class="contactabout__list__ul">
+                    <span class="title width">お問い合わせ種別</span>
+                    <span class="check--must width-2">必須</span>
+                    <span class="select">
+                        <select class="select-test " required>
+                            <option class="selected" hidden>選択してください</option>
+                            <option value="1">企業の方</option>
+                            <option value="2">登壇者の方</option>
+                            <option value="3">お仕事の依頼</option>
+                            <option value="4">その他</option>
+                        </select>
+                    </span>
+                </p>
+                <p class="contactabout__list__ul height">
+                    <span class="title top">メッセージ</span>
+                    <span class="check--must top margin">必須</span>
+                    <span class="textarea"><textarea class="textarea-text"></textarea></span>
+                </p>
+                <p class="contactabout__list__check"><label><input class="check-test" type="checkbox" name="check-name"><span><span class="checkspan">個人情報の取り扱い</span>に同意する</span></label></p>
+                <p class="contactabout__list__reset"><input class="submit-test" type="submit" value="この内容で送信する"></p>
+              </div>
+       </div>
+   </article>
+
+
+
+   <footer>
+    <p class="polygon"><img src="img/footer_ポリゴン-min.png" alt="footer-ポリゴン"></p>  
+    <div class="footer">
+      <h1>CONTENTS</h1>
+      <ul class="footer__ul">
+        <li class="footer__ul__li">
+          <div class="footer-rsp left">
+            <p class="footer__ul__li__icon"><img src="img/グループ 23-min.png" alt="アイコン"></p>
+            <h2 class="footer__ul__li__title">企業の方へ</h2>
+          </div>
+          <div class="footer-rsp">
+            <p class="footer__ul__li__text">ページの簡単な紹介ページの簡単な紹介ページの簡単な紹介ページの簡単な紹介</p>
+            <a class="footer__ul__li__more" href="">詳しく見る</a>
+          </div>
+        </li>
+        <li class="footer__ul__li">
+          <div class="footer-rsp left">
+            <p class="footer__ul__li__icon"><img src="img/グループ 24-min.png" alt="アイコン"></p>
+            <h2 class="footer__ul__li__title">登壇者の方へ</h2>
+          </div>
+          <div class="footer-rsp">
+            <p class="footer__ul__li__text">ページの簡単な紹介ページの簡単な紹介ページの簡単な紹介ページの簡単な紹介</p>
+            <a class="footer__ul__li__more" href="">詳しく見る</a>
+          </div>
+        </li>
+        <li class="footer__ul__li">
+          <div class="footer-rsp left">
+            <p class="footer__ul__li__icon"><img src="img/グループ 25-min.png" alt="アイコン"></p>
+            <h2 class="footer__ul__li__title">企業の方へ</h2>
+          </div>
+          <div class="footer-rsp">
+            <p class="footer__ul__li__text">ページの簡単な紹介ページの簡単な紹介ページの簡単な紹介ページの簡単な紹介</p>
+            <a class="footer__ul__li__more" href="">詳しく見る</a>
+          </div>
+        </li>
+        <li class="footer__ul__li twitter-timeline">
+          <p>Twitterタイムラインダークモードで埋め込み</p>
+        </li>
+      </ul>
+    </div>
+    <div class="icon">
+      <div class="center">
+        <a href=""><img src="img/footer_Twitter-min.png" alt="icon"></a>
+        <a href=""><img src="img/fotter_connpass-min.png" alt="icon"></a>
+      </div>
+    </div>
+    <h5>©️2020 エンジニアの巣窟</h5>
+    
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
