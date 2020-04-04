@@ -4,7 +4,7 @@
 
 <!-- トップ画像、共通class --> 
 <section class="profileimg">
-    <p class="profile__img"><img src="<?php echo get_template_directory_uri() ?>/img/アプリ_背景.png" alt="背景画像"></p>
+    <p class="profile__img"><img src="<?php echo get_template_directory_uri() ?>/img/app_bg.png" alt="背景画像"></p>
     <p class="profile__title"><img src="<?php echo get_template_directory_uri() ?>/img/app_titlelogo-min.png" alt="タイトル"></p>
 </section>
 

@@ -2,7 +2,7 @@
 
 <!-- トップ画像、共通class --> 
 <section class="profileimg">
-    <p class="profile__img"><img src="<?php echo get_template_directory_uri() ?>/img/ゲスト_背景.png" alt="背景画像"></p>
+    <p class="profile__img"><img src="<?php echo get_template_directory_uri() ?>/img/guest_bg.png" alt="背景画像"></p>    
     <p class="profile__title"><img src="<?php echo get_template_directory_uri() ?>/img/seminar_titlelogo-min.png" alt="タイトル"></p>
 </section>
 

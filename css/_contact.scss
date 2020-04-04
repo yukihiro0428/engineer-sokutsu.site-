@@ -47,19 +47,15 @@
                     width: 20%;
                     text-align: left;
                     @include mq("pc") {
-                        width: 35%;
-                    }
-                    @include mq("sp") {
-                        font-size: 1.3rem;
-                        letter-spacing: -1px;
+                        width: 40%;
                     }
                 }
                 .width {
                     @include mq("pc") {
-                        width: 24.2%;
+                        width: 26.7%;
                     }
                     @include mq("sp") {
-                        width: 35%;
+                        width: 40%;
                     }
                 }
                 .check {
@@ -179,6 +175,7 @@
             }   
             //あとで profile.scssも考慮
             &__reset {
+                margin-bottom: 80px;
                 .wpcf7-form-control {
                     margin-bottom: 80px;
                     &:after {
