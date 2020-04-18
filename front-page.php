@@ -1,6 +1,10 @@
 <?php get_header(); ?>
     <div class="topimg">
-        <p class="top__img"><img src="<?php echo get_template_directory_uri() ?>/img/top_titlebg-min.png" alt="トップ画像"></p>
+        <p class="top__img">
+          <img src="<?php echo get_template_directory_uri() ?>/img/top_titlebg-min.png" 
+               srcset="<?php echo get_template_directory_uri() ?>/img/top_titlebg-min.png 1x, 
+                       <?php echo get_template_directory_uri() ?>/img/2x/top_titlebg_top-min.png 2x" 
+                       alt="トップ画像"></p>
         <h1 class="top__title"><img src="<?php echo get_template_directory_uri() ?>/img/top_titlelogo-min.png" alt="タイトル"></h1>
     </div>
     <section class="sec01" id="scroll-js">
