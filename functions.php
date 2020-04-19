@@ -38,15 +38,6 @@ function my_script_init() {
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
 
-/*  レンダリングを妨げるリソースの除外 JSファイルを遅延させる処理  */
-function replace_scripttag($tag){
-    if(!preg_match('/defer/', $tag)){
-        return str_replace("type='text/javascript'", 'async', $tag);
-        }
-    return $tag;
-    add_filter('script_loader_tag','replace_scripttag');
-}
-
 
 //管理バー無視 必要であれば
 // add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
@@ -87,27 +78,22 @@ function custom_loop( $query ) {
     if ( is_admin() || ! $query->is_main_query() ){
         return;
     }
-    if (! $query->post_type('scheduled_events') ){
-        return;
-    }
-
-    if ( $query->is_tax('past_event', 'app') ) {
+    if ( $query->is_tax('events', 'app') || $query->is_tax('events', 'guest') ) {
         $query->set('posts_per_page', 5); 
-        $query->set('post_type', 'past_event');
         $query->set('meta_key', 'eventdate');
         $query->set('orderby', 'meta_value' );
         $query->set('order', 'DESC' );
-        $tax_query = array(
-            array(
-                'taxonomy'  => 'past_event',
-                'operator'  => 'NOT IN',
-            )
-        );
-        $query->set('tax_query', $tax_query);
     }
 }
 add_action( 'pre_get_posts', 'custom_loop' );
       
-
+/*  レンダリングを妨げるリソースの除外 JSファイルを遅延させる処理  */
+function replace_scripttag($tag){
+    if(!preg_match('/defer/', $tag)){
+        return str_replace("type='text/javascript'", 'async', $tag);
+        }
+    return $tag;
+    add_filter('script_loader_tag','replace_scripttag');
+}
 
 

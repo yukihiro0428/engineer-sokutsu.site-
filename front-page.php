@@ -10,11 +10,20 @@
           <!-- 予定イベントのループ処理-->
 
           <?php
+          $today = date_i18n('Ymd');
           $news_query = new WP_Query(
             array(
               'post_type'      => 'scheduled_events',
               'posts_per_page' => 3,
-              'meta_key' => 'eventdate',
+              'meta_query' => array(
+                array(
+                  'key' => 'eventdate',
+                  'compare' => '>=',
+                  'value'   => $today,
+                )
+              ),
+              'orderby' => 'meta_value',
+              'order'=> 'DESC',
             )
           );
           ?>
@@ -84,16 +93,16 @@
               <tr class="tr-third">
                 <td class="tr-third__left">
                   <ul>
-                    <li><span class="span">定</span>員：</li>
-                    <li>登壇者：</li>
-                    <li>対象者：</li>
+                    <?php if(get_field('capacity')): ?><li><span class="span">定</span>員：</li><?php endif; ?>
+                    <?php if(get_field('speakers')): ?><li>登壇者：</li><?php endif; ?>
+                    <?php if(get_field('target_person')): ?><li>対象者：</li><?php endif; ?>
                   </ul>
                 </td>
                 <td class="tr-third__right">
                   <ul>
-                    <li><?php the_field( 'capacity' ); ?>名</li>
-                    <li><?php the_field( 'speakers' ); ?></li>
-                    <li class="text"><?php the_field( 'target_person' ); ?></li>
+                    <?php if(get_field('capacity')): ?><li><?php the_field( 'capacity' ); ?>名</li><?php endif; ?>
+                    <?php if(get_field('speakers')): ?><li><?php the_field( 'speakers' ); ?></li><?php endif; ?>
+                    <?php if(get_field('target_person')): ?><li class="text"><?php the_field( 'target_person' ); ?></li><?php endif; ?>
                   </ul>
                 </td>
               </tr>
@@ -185,9 +194,9 @@
               </h2>
               <h3><?php the_title()?></h3>
               <table>
-                <tr><td class="td__left--app"><span>場</span>所：</td><td><?php the_field( 'place' ); ?></td></tr>
-                <tr><td class="td__left--app">登壇者：</td><td><?php the_field( 'speakers' ); ?></td></tr>
-                <tr><td class="td__left--app">対象者：</td><td class="td__right"><?php the_field( 'target_person' ); ?></td></tr>
+                <?php if(get_field('place')): ?><tr><td class="td__left--app"><span>場</span>所：</td><td><?php the_field( 'place' ); ?></td></tr><?php endif; ?>
+                <?php if(get_field('speakers')): ?><tr><td class="td__left--app">登壇者：</td><td><?php the_field( 'speakers' ); ?></td></tr><?php endif; ?>
+                <?php if(get_field('target_person')): ?><tr><td class="td__left--app">対象者：</td><td class="td__right"><?php the_field( 'target_person' ); ?></td></tr><?php endif; ?>
               </table>
             </div>
           </li>

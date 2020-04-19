@@ -69,17 +69,21 @@
                   <div class="about__in--app"><!-- appの場合 -->
                     <h2 class="category--app">アプリ勉強会</h2><!-- appの場合 -->
                     <table>
-                      <tr><td>場<span>所：</span></td><td><?php the_field( 'place' ); ?></td></tr>
-                      <tr><td>登壇者：</td><td><?php the_field( 'speakers' ); ?></td></tr>
-                      <tr><td>対象者：</td><td><?php the_field( 'target_person' ); ?></td></tr>
+                      <?php if(get_field( 'place' )): ?><tr><td>場<span>所：</span></td><td><?php the_field( 'place' ); ?></td></tr><?php endif; ?>
+                      <?php if(get_field( 'speakers' )): ?><tr><td>登壇者：</td><td><?php the_field( 'speakers' ); ?></td></tr><?php endif; ?>
+                      <?php if(get_field( 'target_person' )): ?><tr><td>対象者：</td><td><?php the_field( 'target_person' ); ?></td></tr><?php endif; ?>
                     </table>
                     
                     <p class="text"><?php the_field( 'text' ); ?></p>
                     <?php if( get_field('movie_url') ): ?>
                       <div class="iframe-wrap">
-                        <?php echo $embed_code = wp_oembed_get( get_field('movie_url') ); ?>   
-                      </div>  
-                    <?php endif; ?>  
+                          <iframe width="740" height="420" 
+                          <?php echo $embed_code = wp_oembed_get( get_field('movie_url') ); ?>
+                          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                          </iframe>
+                        <!-- www.youtube.com/embed/WlABdHgfLNU -->
+                      </div>
+                    <?php endif; ?>
                   </div>
                 </div>
               </li>
