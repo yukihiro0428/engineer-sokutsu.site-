@@ -77,13 +77,9 @@
                     <p class="text"><?php the_field( 'text' ); ?></p>
                     <?php if( get_field('movie_url') ): ?>
                       <div class="iframe-wrap">
-                          <iframe width="740" height="420" 
-                          <?php echo $embed_code = wp_oembed_get( get_field('movie_url') ); ?>
-                          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                          </iframe>
-                        <!-- www.youtube.com/embed/WlABdHgfLNU -->
-                      </div>
-                    <?php endif; ?>
+                        <?php echo $embed_code = wp_oembed_get( get_field('movie_url') ); ?>   
+                      </div>  
+                    <?php endif; ?>  
                   </div>
                 </div>
               </li>

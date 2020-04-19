@@ -2918,6 +2918,12 @@ footer h5 {
   display: flex;
 }
 
+@media screen and (max-width: 999px) {
+  .contact .contactabout__list__ul {
+    height: auto;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .contact .contactabout__list__ul {
     -ms-flex-wrap: wrap;
@@ -2927,12 +2933,7 @@ footer h5 {
 
 .contact .contactabout__list__ul span {
   display: inline-block;
-}
-
-@media screen and (max-width: 999px) {
-  .contact .contactabout__list__ul {
-    height: auto;
-  }
+  width: 100%;
 }
 
 .contact .contactabout__list__ul .title {
@@ -2946,26 +2947,26 @@ footer h5 {
 
 @media screen and (max-width: 999px) {
   .contact .contactabout__list__ul .title {
-    width: 35%;
+    width: 40%;
   }
 }
 
 @media screen and (max-width: 767px) {
   .contact .contactabout__list__ul .title {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     letter-spacing: -1px;
   }
 }
 
 @media screen and (max-width: 999px) {
-  .contact .contactabout__list__ul .width {
-    width: 24.4%;
+  .contact .contactabout__list__ul .title2 {
+    width: 26.7%;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .contact .contactabout__list__ul .width {
-    width: 35%;
+  .contact .contactabout__list__ul .title2 {
+    width: 40%;
   }
 }
 
@@ -2995,38 +2996,25 @@ footer h5 {
   background: #ee861a;
   color: white;
   border-radius: 5px;
-  border-radius: 5px;
   margin: auto 10px auto 0;
   padding-bottom: 2px;
 }
 
-@media screen and (max-width: 999px) {
-  .contact .contactabout__list__ul .width2 {
-    width: 28px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .contact .contactabout__list__ul .width2 {
-    width: 40px;
-  }
-}
-
-.contact .contactabout__list__ul .width-2 {
+.contact .contactabout__list__ul .width2 {
   position: relative;
   top: -7px;
 }
 
 @media screen and (max-width: 999px) {
-  .contact .contactabout__list__ul .width-2 {
-    width: 27.88px;
+  .contact .contactabout__list__ul .width2 {
+    width: 26.98px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .contact .contactabout__list__ul .width-2 {
+  .contact .contactabout__list__ul .width2 {
     width: 40px;
-    top: auto;
+    position: static;
   }
 }
 
@@ -3068,24 +3056,20 @@ footer h5 {
   }
 }
 
-.contact .contactabout__list__ul .wpcf7-form-control-wrap {
-  width: 100%;
-}
-
 .contact .contactabout__list__ul .select {
   position: relative;
   width: 340px;
 }
 
-.contact .contactabout__list__ul .select .select-test {
+.contact .contactabout__list__ul .select .text-test {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
   background-color: #f7f7f7;
+  background-image: none;
   border: 1px solid #cccccc;
   border-radius: 0;
   color: inherit;
-  cursor: pointer;
   font-family: inherit;
   font-size: 1em;
   padding: 0.4em 0.8em;
@@ -3094,12 +3078,8 @@ footer h5 {
   width: 100%;
 }
 
-.contact .contactabout__list__ul .select .select-test::-ms-expand {
-  display: none;
-}
-
-.contact .contactabout__list__ul .select .select-test:focus {
-  border: 1px solid #cccccc;
+.contact .contactabout__list__ul .select .text-test:focus {
+  border: 1px solid rgba(0, 0, 0, 0.32);
   -webkit-box-shadow: none;
           box-shadow: none;
   outline: none;
@@ -3107,16 +3087,15 @@ footer h5 {
 
 @media screen and (max-width: 767px) {
   .contact .contactabout__list__ul .select {
-    height: 38.78px;
+    width: 100%;
   }
 }
 
-.contact .contactabout__list__ul .select .wpcf7-form-control-wrap {
-  position: absolute;
-  top: 0;
+.contact .contactabout__list__ul .select input {
+  height: 35px;
 }
 
-.contact .contactabout__list__ul .select .wpcf7-form-control-wrap::before {
+.contact .contactabout__list__ul .select:before {
   position: absolute;
   top: 1em;
   right: 0.8em;
@@ -3131,10 +3110,10 @@ footer h5 {
   z-index: 2;
 }
 
-@media screen and (max-width: 767px) {
-  .contact .contactabout__list__ul .select {
-    width: 100%;
-  }
+.contact .contactabout__list__ul .select .wpcf7-form-control-wrap {
+  position: absolute;
+  width: 100%;
+  top: 0;
 }
 
 .contact .contactabout__list__ul .select .select-test {
@@ -3142,9 +3121,13 @@ footer h5 {
 }
 
 .contact .contactabout__list__ul .select .select-test option {
-  width: 340px;
+  width: 100%;
   background-color: white;
-  border: 1px solid #cccccc;
+  border: 1px solid white;
+}
+
+.contact .contactabout__list__ul .select .select-test option:hover {
+  background-color: #e1e1e1;
 }
 
 .contact .contactabout__list__ul .textarea {
@@ -3265,6 +3248,7 @@ footer h5 {
 
 .contact .contactabout__list__reset {
   margin-bottom: 80px;
+  position: relative;
 }
 
 .contact .contactabout__list__reset .wpcf7-form-control {
@@ -3332,6 +3316,9 @@ footer h5 {
 
 div.wpcf7 .ajax-loader {
   position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
 
 @media screen and (max-width: 767px) {
