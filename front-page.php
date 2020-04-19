@@ -1,10 +1,6 @@
 <?php get_header(); ?>
     <div class="topimg">
-        <p class="top__img">
-          <img src="<?php echo get_template_directory_uri() ?>/img/top_titlebg-min.png" 
-               srcset="<?php echo get_template_directory_uri() ?>/img/top_titlebg-min.png 1x, 
-                       <?php echo get_template_directory_uri() ?>/img/2x/top_titlebg_top-min.png 2x" 
-                       alt="トップ画像"></p>
+        <p class="top__img"><img src="<?php echo get_template_directory_uri() ?>/img/top_titlebg-min.png" alt="トップ画像"></p>
         <h1 class="top__title"><img src="<?php echo get_template_directory_uri() ?>/img/top_titlelogo-min.png" alt="タイトル"></h1>
     </div>
     <section class="sec01" id="scroll-js">
@@ -14,16 +10,11 @@
           <!-- 予定イベントのループ処理-->
 
           <?php
-          $today = date_i18n('Ymd');
           $news_query = new WP_Query(
             array(
               'post_type'      => 'scheduled_events',
               'posts_per_page' => 3,
               'meta_key' => 'eventdate',
-              'meta_value'  => $today,
-              'meta_compare'  => '>=',
-              'orderby'  => 'meta_value',
-              'order'  => 'ASC',
             )
           );
           ?>
@@ -121,16 +112,13 @@
         <ul class="sec01__past__post">
         <!-- 予定イベントのループ処理-->
         <?php
-          $today = date_i18n('Ymd');
           $news_query = new WP_Query(
             array(
               'post_type'      => 'past_event',
               'posts_per_page' => 3,
               'meta_key' => 'eventdate',
-              'meta_value'  => $today,
-              'meta_compare'  => '<=',
               'orderby'  => 'meta_value',
-              'order'  => 'DESC',
+              'order' => 'DESC',
             )
           );
           ?>

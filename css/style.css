@@ -1813,7 +1813,7 @@ footer .footer__ul .twitter_timeline iframe {
 
 footer .footer__ul__li {
   background-color: white;
-  width: calc(25% - 15px);
+  width: calc(25% - 20px);
   margin-right: 20px;
   min-height: 200px;
   -webkit-box-sizing: border-box;
@@ -2947,19 +2947,26 @@ footer h5 {
 
 @media screen and (max-width: 999px) {
   .contact .contactabout__list__ul .title {
-    width: 40%;
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contact .contactabout__list__ul .title {
+    font-size: 1.3rem;
+    letter-spacing: -1px;
   }
 }
 
 @media screen and (max-width: 999px) {
   .contact .contactabout__list__ul .width {
-    width: 26.7%;
+    width: 24.2%;
   }
 }
 
 @media screen and (max-width: 767px) {
   .contact .contactabout__list__ul .width {
-    width: 40%;
+    width: 35%;
   }
 }
 
@@ -3231,10 +3238,6 @@ footer h5 {
 .contact .contactabout__list__check .checkspan {
   color: #009aa3;
   border-bottom: solid 1px #009aa3;
-}
-
-.contact .contactabout__list__reset {
-  margin-bottom: 80px;
 }
 
 .contact .contactabout__list__reset .wpcf7-form-control {

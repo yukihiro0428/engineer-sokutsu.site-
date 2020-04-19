@@ -34,7 +34,7 @@ add_action('after_setup_theme', 'my_setup');
 function my_script_init() {
     wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css', array(), '5.8.2', 'all');
     wp_enqueue_style('my', get_template_directory_uri() . '/css/style.css', array(), '1.0.31', 'all');
-    wp_enqueue_script('my', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.1', true);
+    wp_enqueue_script('my', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
 
@@ -78,16 +78,23 @@ function custom_loop( $query ) {
     if ( is_admin() || ! $query->is_main_query() ){
         return;
     }
-
-    if ( $query->is_tax('events', 'app') ) {
-        $query->set('meta_key', 'eventdate');
-        $query->set('orderby', 'meta_value' );
-        $query->set('order', 'DESC' );
+    if (! $query->post_type('scheduled_events') ){
+        return;
     }
-    if ( $query->is_tax('events', 'guest') ) {
+
+    if ( $query->is_tax('past_event', 'app') ) {
+        $query->set('posts_per_page', 5); 
+        $query->set('post_type', 'past_event');
         $query->set('meta_key', 'eventdate');
         $query->set('orderby', 'meta_value' );
         $query->set('order', 'DESC' );
+        $tax_query = array(
+            array(
+                'taxonomy'  => 'past_event',
+                'operator'  => 'NOT IN',
+            )
+        );
+        $query->set('tax_query', $tax_query);
     }
 }
 add_action( 'pre_get_posts', 'custom_loop' );
