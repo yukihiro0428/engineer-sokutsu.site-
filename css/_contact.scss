@@ -163,6 +163,9 @@
                 }
                 .margin {
                     margin-top: 5px;
+                    @include mq("sp") {
+                        margin-top: 3px;
+                    }
                 }
             }   
             .height {
@@ -177,8 +180,8 @@
                     border-bottom: solid 1px rgb(0, 154, 163);
                 }
             }   
-            //あとで profile.scssも考慮
             &__reset {
+                margin-bottom: 80px;
                 .wpcf7-form-control {
                     margin-bottom: 80px;
                     &:after {
@@ -218,7 +221,12 @@
         }
     }
 }
-
+div.wpcf7 .ajax-loader {
+    position: absolute;
+    @include mq("sp") {
+        position: static;
+    }
+}
 
 
 
