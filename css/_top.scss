@@ -30,7 +30,6 @@ header {
                     color: white;
                     @include mq ("sp") {
                         @include center-poji;
-                        top: 55%;
                         flex-direction: column;
                         width: 70%;
                         padding-left: 10vw;

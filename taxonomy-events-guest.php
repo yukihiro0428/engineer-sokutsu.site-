@@ -2,7 +2,7 @@
 
 <!-- トップ画像、共通class --> 
 <section class="profileimg">
-    <p class="profile__img"><img src="<?php echo get_template_directory_uri() ?>/img/ゲスト_背景.png" alt="背景画像"></p>
+    <p class="profile__img"><img src="<?php echo get_template_directory_uri() ?>/img/guest_bg-min.png" alt="背景画像"></p>
     <p class="profile__title"><img src="<?php echo get_template_directory_uri() ?>/img/seminar_titlelogo-min.png" alt="タイトル"></p>
 </section>
 
@@ -76,19 +76,16 @@
                     <tr><td>登壇者：</td><td><?php the_field( 'speakers' ); ?></td></tr>
                     <tr><td>対象者：</td><td><?php the_field( 'target_person' ); ?></td></tr>
                   </table>
-                  <p class="text"><?php the_field( 'text' ); ?></p>
-                  <div class="iframe-wrap">
-                    <iframe width="740" height="420" 
+
+                   <p class="text"><?php the_field( 'text' ); ?></p>
                     <?php if( get_field('movie_url') ): ?>
-                    <?php echo $embed_code = wp_oembed_get( get_field('movie_url') ); ?>
-                    <?php endif; ?>
-                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                    </iframe>
-                    <!-- www.youtube.com/embed/WlABdHgfLNU -->
+                      <div class="iframe-wrap">
+                        <?php echo $embed_code = wp_oembed_get( get_field('movie_url') ); ?>   
+                      </div>  
+                    <?php endif; ?>  
                   </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
           <?php endwhile; ?>
         <?php endif; ?>

@@ -56,7 +56,7 @@
                 }
                 .width {
                     @include mq("pc") {
-                        width: 24.2%;
+                        width: 24.4%;
                     }
                     @include mq("sp") {
                         width: 35%;
@@ -85,6 +85,14 @@
                         border-radius: 5px;
                         margin: auto 10px auto 0;
                         padding-bottom: 2px;
+                    }
+                }
+                .width2 {
+                    @include mq("pc") {
+                        width: 28px;
+                    }
+                    @include mq("sp") {
+                        width: 40px;
                     }
                 }
                 .width-2 {
@@ -116,6 +124,9 @@
                     @include select-reset;
                     position: relative;
                     width: 340px;
+                    @include mq("sp") {
+                        height: 38.78px;
+                    }
                     .wpcf7-form-control-wrap {
                         position: absolute;
                         top: 0;

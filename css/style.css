@@ -293,7 +293,6 @@ header nav .header__list__ul {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    top: 55%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2960,7 +2959,7 @@ footer h5 {
 
 @media screen and (max-width: 999px) {
   .contact .contactabout__list__ul .width {
-    width: 24.2%;
+    width: 24.4%;
   }
 }
 
@@ -2999,6 +2998,18 @@ footer h5 {
   border-radius: 5px;
   margin: auto 10px auto 0;
   padding-bottom: 2px;
+}
+
+@media screen and (max-width: 999px) {
+  .contact .contactabout__list__ul .width2 {
+    width: 28px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contact .contactabout__list__ul .width2 {
+    width: 40px;
+  }
 }
 
 .contact .contactabout__list__ul .width-2 {
@@ -3092,6 +3103,12 @@ footer h5 {
   -webkit-box-shadow: none;
           box-shadow: none;
   outline: none;
+}
+
+@media screen and (max-width: 767px) {
+  .contact .contactabout__list__ul .select {
+    height: 38.78px;
+  }
 }
 
 .contact .contactabout__list__ul .select .wpcf7-form-control-wrap {
