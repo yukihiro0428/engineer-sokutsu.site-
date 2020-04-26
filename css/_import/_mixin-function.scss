@@ -1,5 +1,5 @@
 // 色関係
-$color-orange : rgb(213, 90, 0);
+$color-orange: rgb(213, 90, 0);
 $color-blue: rgb(28, 80, 114);
 
 // メディアクエリー
@@ -8,37 +8,37 @@ $layout-rsp: 80%;
 $rsp: 92vw;
 // ブレークポイント
 $breakpoints: (
-      "xs": "screen and (max-width: 320px)",
-      "sp": "screen and (max-width: 767px)",
-    //  "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
-      "pc": "screen and (max-width: #{$layout-width-inner})",
-"pc2-less": "screen and (max-width: 1349px)",
-     "pc2": "screen and (min-width: 1350px)",//1300px以上の幅の場合は
+  "xs": "screen and (max-width: 320px)",
+  "sp": "screen and (max-width: 767px)",
+  //  "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
+    "pc": "screen and (max-width: #{$layout-width-inner})",
+  "pc2-less": "screen and (max-width: 1349px)",
+  "pc2": "screen and (min-width: 1350px)",
+  //1300px以上の幅の場合は
 );
 //rsp padding:20px, margin-bottom:30pxで統一
 // PC → インナーの幅まで
 // タブレット → インナーの幅からiPad（768px）まで
 // スマホ → iPadより小さい（767px）からiPhone SE（320px）まで
 @mixin mq($breakpoint: sp) {
-    @media #{map-get($breakpoints, $breakpoint)} {
-      @content;
-    }
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
   }
-
+}
 
 //中央配置
 @mixin center-poji {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 @mixin center-flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 // xdのフォント決め用
@@ -53,15 +53,16 @@ $breakpoints: (
 }
 
 //z-index
-  $layer: (
-    drawer-menu          : 100,
-    drawer-header__right : 50,
-    drawer-nav-sp-menu   : 30,
-    header               : 20,
-    drawer-over-lay      : 2,//プロフィールページの「about me」箇所にも適応 問い合わせのselect:beforeも
+$layer: (
+  drawer-menu: 100,
+  drawer-header__right: 50,
+  drawer-nav-sp-menu: 30,
+  header: 20,
+  drawer-over-lay: 2,
+  //プロフィールページの「about me」箇所にも適応 問い合わせのselect:beforeも
     // default              : 1
-    back                 : -1
-  );
+    back: -1,
+);
 @mixin z-index($key) {
   z-index: map-get($layer, $key);
 }
@@ -69,14 +70,14 @@ $breakpoints: (
 
 // グラデーション
 @mixin gra-blue {
-  background: linear-gradient(to left, #0083B0, #36D1DC);
-  background: -moz-linear-gradient(right, #0083B0, #36D1DC);
-  background: -webkit-linear-gradient(right, #0083B0, #36D1DC);
+  background: linear-gradient(to left, #0083b0, #36d1dc);
+  background: -moz-linear-gradient(right, #0083b0, #36d1dc);
+  background: -webkit-linear-gradient(right, #0083b0, #36d1dc);
 }
 @mixin gra-orange {
-  background: linear-gradient(to left, #E65C00, #F9D423);
-  background: -moz-linear-gradient(right, #E65C00, #F9D423);
-  background: -webkit-linear-gradient(right, #E65C00, #F9D423);
+  background: linear-gradient(to left, #e65c00, #f9d423);
+  background: -moz-linear-gradient(right, #e65c00, #f9d423);
+  background: -webkit-linear-gradient(right, #e65c00, #f9d423);
 }
 
 @mixin gra-black {
@@ -86,19 +87,31 @@ $breakpoints: (
 }
 
 @mixin gra-head {
-  background: linear-gradient(to left, rgba(213, 90, 0, 0.3), rgba(0, 103, 170, 0.3));
-  background: -moz-linear-gradient(right, rgba(213, 90, 0, 0.3), rgba(0, 103, 170, 0.3));
-  background: -webkit-linear-gradient(right, rgba(213, 90, 0, 0.3), rgba(0, 103, 170, 0.3));
+  background: linear-gradient(
+    to left,
+    rgba(213, 90, 0, 0.3),
+    rgba(0, 103, 170, 0.3)
+  );
+  background: -moz-linear-gradient(
+    right,
+    rgba(213, 90, 0, 0.3),
+    rgba(0, 103, 170, 0.3)
+  );
+  background: -webkit-linear-gradient(
+    right,
+    rgba(213, 90, 0, 0.3),
+    rgba(0, 103, 170, 0.3)
+  );
 }
 
 @mixin hover-bg {
   opacity: 0.75;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 @mixin hover-tx($color) {
   color: lighten($color, 20%);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 @mixin button {
@@ -115,9 +128,9 @@ $breakpoints: (
     position: absolute;
     right: 15px;
     top: 50%;
-    -ms-transform: translate(0,-50%);
-    -webkit-transform: translate(0,-50%);
-    transform: translate(0,-50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
   }
 }
 
@@ -136,26 +149,25 @@ $breakpoints: (
 
 //背景-格子
 @mixin bg-stripe($color, $transmission) {
-  background-color : $color;
-  background-image:
-  repeating-linear-gradient( 
+  background-color: $color;
+  background-image: repeating-linear-gradient(
       60deg,
       rgba(241, 241, 241, $transmission),
       transparent 2px 20px
-  ),
-  repeating-linear-gradient(
+    ),
+    repeating-linear-gradient(
       -60deg,
       rgba(241, 241, 241, $transmission),
       transparent 2px 20px
-  ),
-  repeating-linear-gradient(
+    ),
+    repeating-linear-gradient(
       0deg,
       rgba(241, 241, 241, $transmission),
       transparent 2px 20px
-  );
+    );
 }
 
-//テキストの初期化 
+//テキストの初期化
 @mixin text-reset {
   .text-test {
     -moz-appearance: none;

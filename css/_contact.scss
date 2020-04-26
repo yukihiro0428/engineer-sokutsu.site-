@@ -1,278 +1,272 @@
 .contact {
-    width: $layout-width-inner;
+  width: $layout-width-inner;
+  margin: 0 auto;
+  padding: 64px 0 80px;
+  text-align: center;
+  @include mq("pc") {
+    width: $rsp;
+  }
+  &__h1 {
+    @include font(42, 0, 33, 800);
+    margin-bottom: 35px;
+    line-height: 1;
+    @include mq("sp") {
+      @include font(30, 0, 33, bold);
+    }
+  }
+  &__p {
+    @include font(16, 0, 32, 400);
+    margin-bottom: 50px;
+  }
+  .contactabout {
+    width: 800px;
     margin: 0 auto;
-    padding-top: 64px;
-    text-align: center;
     @include mq("pc") {
-        width: $rsp;
+      width: $layout-rsp;
     }
-    &__h1 {
-        @include font(42, 0, 33, 800);
-        margin-bottom: 35px;
-        line-height: 1;
-        @include mq("sp") {
-            @include font(30, 0, 33, bold);
-        }
+    @include mq("sp") {
+      width: $rsp;
     }
-    &__p {
-        @include font(16, 0, 32, 400);
-        margin-bottom: 50px;
-    }
-    .contactabout {
-        width: 800px;
-        margin: 0 auto;
+    &__list {
+      width: 100%;
+      &__ul {
+        margin-bottom: 23px;
+        text-align: left;
+        display: flex;
         @include mq("pc") {
-            width: $layout-rsp;
+          height: auto;
         }
         @include mq("sp") {
-            width: $rsp;
+          flex-wrap: wrap;
         }
-        &__list {
+        span {
+          display: inline-block;
+          width: 100%;
+        }
+        .title {
+          @include font(16, 0, 32, 400);
+          width: 20%;
+          text-align: left;
+          @include mq("pc") {
+            width: 40%;
+          }
+          @include mq("sp") {
+            font-size: 1.6rem;
+            letter-spacing: -1px;
+          }
+        }
+        .title2 {
+          @include mq("pc") {
+            width: 26.7%;
+          }
+          @include mq("sp") {
+            width: 40%;
+          }
+        }
+        .check {
+          &--any {
+            width: 40px;
+            @include font(11, 100, 19.25, 400);
+            letter-spacing: normal;
+            text-align: center;
+            background: rgb(189, 204, 212);
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            margin: auto 10px auto 0;
+            padding-bottom: 2px;
+          }
+          &--must {
+            width: 40px;
+            @include font(11, 100, 19.25, 400);
+            letter-spacing: normal;
+            text-align: center;
+            background: rgb(238, 134, 26);
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            margin: auto 10px auto 0;
+            padding-bottom: 2px;
+          }
+        }
+        //セレクトボックスの必須箇所の
+        .width2 {
+          position: relative;
+          top: -7px;
+          @include mq("pc") {
+            width: 26.98px;
+          }
+          @include mq("sp") {
+            width: 40px;
+            position: static;
+          }
+        }
+        .text {
+          width: 72.5%;
+          @include text-reset;
+          input {
+            height: 35px;
+          }
+          @include mq("pc") {
             width: 100%;
-            &__ul {
-                margin-bottom: 23px;
-                text-align: left;
-                display: flex;
-                @include mq("pc") {
-                    height: auto;
-                }
-                @include mq("sp") {
-                    flex-wrap: wrap;
-                }
-                span {
-                    display: inline-block;
-                    width: 100%;
-                }
-                .title {
-                    @include font(16, 0, 32, 400);
-                    width: 20%;
-                    text-align: left;
-                    @include mq("pc") {
-                        width: 40%;
-                    }
-                    @include mq("sp") {
-                        font-size: 1.6rem;
-                        letter-spacing: -1px;
-                    }
-                }
-                .title2 {
-                    @include mq("pc") {
-                        width: 26.7%;
-                    }
-                    @include mq("sp") {
-                        width: 40%;
-                    }
-                }
-                .check {
-                    &--any {
-                        width: 40px;
-                        @include font(11, 100, 19.25, 400);
-                        letter-spacing: normal;
-                        text-align: center;
-                        background: rgb(189, 204, 212);
-                        color: rgb(255, 255, 255);
-                        border-radius: 5px;
-                        margin: auto 10px auto 0;
-                        padding-bottom: 2px;
-                    }
-                    &--must {
-                        width: 40px;
-                        @include font(11, 100, 19.25, 400);
-                        letter-spacing: normal;
-                        text-align: center;
-                        background: rgb(238, 134, 26);
-                        color: rgb(255, 255, 255);
-                        border-radius: 5px;
-                        margin: auto 10px auto 0;
-                        padding-bottom: 2px;
-                    }
-                }
-                //セレクトボックスの必須箇所の
-                .width2 {
-                    position: relative;
-                    top: -7px;
-                    @include mq("pc") {
-                        width: 26.98px;
-                    }
-                    @include mq("sp") {
-                        width: 40px;
-                        position: static;
-                    }
-                }
-                .text {
-                    width: 72.5%;
-                    @include text-reset;
-                    input {
-                        height: 35px;
-                    }
-                    @include mq("pc") {
-                        width: 100%;
-                    }
-                }
-                .select {
-                    position: relative;
-                    width: 340px;
-                    @include text-reset;
-                    @include mq("sp") {
-                        width: 100%;
-                    }
-                    input {
-                        height: 35px;
-                    }
-                    &:before {
-                        position: absolute;
-                        top: 1em;
-                        right: 0.8em;
-                        width: 0;
-                        height: 0;
-                        padding: 0;
-                        content: '';
-                        border-left: 6px solid transparent;
-                        border-right: 6px solid transparent;
-                        border-top: 10px solid rgb(16, 16, 16);
-                        pointer-events: none;
-                        @include z-index(drawer-over-lay);
-                    }
-                    .wpcf7-form-control-wrap {
-                        position: absolute;
-                        width: 100%;
-                        top: 0;
-                    }
-                    .select-test {   
-                        margin-right: auto;
-                        option {
-                            width: 100%;
-                            background-color: rgb(255, 255, 255);
-                            border: 1px solid rgb(255, 255, 255); 
-                            &:hover {
-                                background-color: rgb(225, 225, 225);
-                            }
-                        }
-                    }
-                }
-                .textarea {
-                    width: 72.5%;
-                    @include textarea-reset;
-                    @include mq("pc") {
-                        width: 100%;
-                    }
-                    textarea {
-                        resize: none;
-                        height: 190px;
-                    }  
-                        
-                }
-                .top {
-                    vertical-align: top;
-                }
-                .margin {
-                    margin-top: 5px;
-                    @include mq("sp") {
-                        margin-top: 3px;
-                    }
-                }
-            }   
-            .height {
-                height: auto;
-                margin-bottom: 50px;
-            }      
-            &__check {
-                @include check-reset;
-                margin-bottom: 50px;
-                .checkspan {
-                    color: rgb(0, 154, 163);
-                    border-bottom: solid 1px rgb(0, 154, 163);
-                }
-            }   
-            &__reset {
-                margin-bottom: 80px;
-                position: relative;
-                .wpcf7-form-control {
-                    margin-bottom: 80px;
-                    &:after {
-                        content: none;
-                    }
-                    //初期化
-                    -webkit-appearance: none;
-                    border: none;
-                    cursor: pointer;
-                    display: inline-block;
-                    //初期化 ここまで
-                    font-family: 'Noto Sans JP', sans-serif;
-                    @include button;
-                    width: 420px;
-                    margin: 0 auto;
-                    @include gra-black;
-                    padding: 13px auto;
-                    box-sizing: border-box;
-                    &:hover {
-                        @include hover-bg;
-                    }
-                    @include mq("sp") {
-                        width: 100%;
-                    }
-                }
-                  
-                .submit-test:hover,
-                .submit-test:focus {
-                    outline: none;
-                }
-                  
-                .submit-test::-moz-foucus-inner {
-                    border: none;
-                    padding: 0;
-                }
-            }
+          }
         }
+        .select {
+          position: relative;
+          width: 340px;
+          @include text-reset;
+          @include mq("sp") {
+            width: 100%;
+          }
+          input {
+            height: 35px;
+          }
+          &:before {
+            position: absolute;
+            top: 1em;
+            right: 0.8em;
+            width: 0;
+            height: 0;
+            padding: 0;
+            content: "";
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 10px solid rgb(16, 16, 16);
+            pointer-events: none;
+            @include z-index(drawer-over-lay);
+          }
+          .wpcf7-form-control-wrap {
+            position: absolute;
+            width: 100%;
+            top: 0;
+          }
+          .select-test {
+            margin-right: auto;
+            option {
+              width: 100%;
+              background-color: rgb(255, 255, 255);
+              border: 1px solid rgb(255, 255, 255);
+              &:hover {
+                background-color: rgb(225, 225, 225);
+              }
+            }
+          }
+        }
+        .textarea {
+          width: 72.5%;
+          @include textarea-reset;
+          @include mq("pc") {
+            width: 100%;
+          }
+          textarea {
+            resize: none;
+            height: 190px;
+          }
+        }
+        .top {
+          vertical-align: top;
+        }
+        .margin {
+          margin-top: 5px;
+          @include mq("sp") {
+            margin: auto 10px auto 0;
+          }
+        }
+      }
+      .height {
+        height: auto;
+        margin-bottom: 50px;
+      }
+      &__check {
+        @include check-reset;
+        margin-bottom: 50px;
+        .checkspan {
+          color: rgb(0, 154, 163);
+          border-bottom: solid 1px rgb(0, 154, 163);
+        }
+      }
+      &__reset {
+        position: relative;
+        .wpcf7-form-control {
+          margin-bottom: 80px;
+          &:after {
+            content: none;
+          }
+          //初期化
+          -webkit-appearance: none;
+          border: none;
+          cursor: pointer;
+          display: inline-block;
+          //初期化 ここまで
+          font-family: "Noto Sans JP", sans-serif;
+          @include button;
+          width: 420px;
+          margin: 0 auto;
+          @include gra-black;
+          padding: 13px auto;
+          box-sizing: border-box;
+          &:hover {
+            @include hover-bg;
+          }
+          @include mq("sp") {
+            width: 100%;
+          }
+        }
+
+        .submit-test:hover,
+        .submit-test:focus {
+          outline: none;
+        }
+
+        .submit-test::-moz-foucus-inner {
+          border: none;
+          padding: 0;
+        }
+      }
     }
+  }
 }
 div.wpcf7 .ajax-loader {
-    position: absolute;
-    top: 50%;
-    -ms-transform: translate(0,-50%);
-    -webkit-transform: translate(0,-50%);
-    transform: translate(0,-50%);
-    @include mq("sp") {
-        position: static;
-    }
+  position: absolute;
+  left: 50%;
+  display: block;
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 
-
-
 address {
-    background: rgb(245, 237, 237);
-    width: $layout-width-inner;
-    margin: 0 auto;
-    .address {
-        text-align: center;
-        &__li {
-            display: list-item;
-            @include text-reset;//初期化
-            .text-test {
-                box-sizing: border-box;
-            }
-            .textarea-text {
-                -moz-appearance: none;
-                -webkit-appearance: none;
-                appearance: none;
-                background-color: transparent;
-                background-image: none;
-                border: 1px solid rgba(0, 0, 0, 0.16);
-                border-radius: 0;
-                color: inherit;
-                font-family: inherit;
-                font-size: 1em;
-                height: 100px;
-                padding: 0.4em 0.8em;
-                width: 100%;
-                box-sizing: border-box;
-            }
-            
-            .textarea-text:focus {
-                border: 1px solid rgba(0, 0, 0, 0.32);
-                box-shadow: none;
-                outline: none;
-            }
-        }
+  background: rgb(245, 237, 237);
+  width: $layout-width-inner;
+  margin: 0 auto;
+  .address {
+    text-align: center;
+    &__li {
+      display: list-item;
+      @include text-reset; //初期化
+      .text-test {
+        box-sizing: border-box;
+      }
+      .textarea-text {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        background-image: none;
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        border-radius: 0;
+        color: inherit;
+        font-family: inherit;
+        font-size: 1em;
+        height: 100px;
+        padding: 0.4em 0.8em;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .textarea-text:focus {
+        border: 1px solid rgba(0, 0, 0, 0.32);
+        box-shadow: none;
+        outline: none;
+      }
     }
+  }
 }

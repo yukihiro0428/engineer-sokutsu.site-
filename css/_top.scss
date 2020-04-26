@@ -1,1118 +1,1142 @@
-
 header {
-    position: fixed;
-    @include gra-head;
-    width: 100%;
-    @include z-index(header);
-    nav {
-        display: flex;
-        justify-content: center;
-        max-width: $layout-width-inner;
-        align-items: center;
-        height: 50px;
-        margin: 0 auto;
-        .header {
-            margin: 0 auto;
-            &__list {
-                @include mq("sp") {
-                    width: 70vw;//.menu-trigger.activeも考慮必要
-                    height: 100%;
-                    position: fixed;
-                    top: 0;
-                    right: 0;
-                    @include z-index(drawer-nav-sp-menu);
-                    @include bg-stripe(rgb(51, 51, 51), 0.1);
-                    transform: translate(100%);
-                    transition: all .5s;
-                }
-                &__ul {
-                    display: flex;
-                    color: white;
-                    @include mq ("sp") {
-                        @include center-poji;
-                        flex-direction: column;
-                        width: 70%;
-                        padding-left: 10vw;
-                    }
-                    &__li {
-                        @include font(16, 0, 24, bold);
-                        margin-right: 60px;
-                        @include mq("pc") {
-                            margin-right: 25px;
-                            letter-spacing: -1px;
-                        }
-                        &:nth-child(7) {
-                            margin-right: 0px;
-                        }
-                        @include mq ('sp') {
-                            margin-right: 0;
-                            margin-bottom: 40px;
-                            text-align: left;
-                            font-size: 2rem;
-                        }
-                        &:hover {
-                            @include hover-bg;
-                        }   
-                    }
-                }
-            }
-            &__icon {
-                display: none;
-                @include mq("pc2") {
-                    display: flex;
-                }
-                position: absolute;
-                top: 50%;
-                right: 3vw;
-                -ms-transform: translate(0,-50%);
-                -webkit-transform: translate(0,-50%);
-                transform: translate(0,-50%);
-                &__twitter {
-                    color: rgb(255, 255, 255);
-                    margin-right: 16px;
-                    &:hover {
-                        @include hover-tx($color-orange);
-                        -webkit-transform: scale(1.3);
-                        -moz-transform: scale(1.3);
-                        -o-transform: scale(1.3);
-                        -ms-transform: scale(1.3);
-                        transform: scale(1.3);
-                        transition: .5s;
-                    }
-                }
-                &__connpass {
-                    &:hover {
-                        -webkit-transform: scale(1.3);
-                        -moz-transform: scale(1.3);
-                        -o-transform: scale(1.3);
-                        -ms-transform: scale(1.3);
-                        transform: scale(1.3);
-                        transition: .5s;
-                    }
-                }
-            }
+  position: fixed;
+  @include gra-head;
+  width: 100%;
+  @include z-index(header);
+  nav {
+    display: flex;
+    justify-content: center;
+    max-width: $layout-width-inner;
+    align-items: center;
+    height: 50px;
+    margin: 0 auto;
+    .header {
+      margin: 0 auto;
+      &__list {
+        @include mq("sp") {
+          width: 70vw; //.menu-trigger.activeも考慮必要
+          height: 100%;
+          position: fixed;
+          top: 0;
+          right: 0;
+          @include z-index(drawer-nav-sp-menu);
+          @include bg-stripe(rgb(51, 51, 51), 0.1);
+          transform: translate(100%);
+          transition: all 0.5s;
         }
+        &__ul {
+          display: flex;
+          color: white;
+          @include mq("sp") {
+            @include center-poji;
+            flex-direction: column;
+            width: 70%;
+            padding-left: 10vw;
+          }
+          &__li {
+            @include font(16, 0, 24, bold);
+            margin-right: 60px;
+            @include mq("pc") {
+              margin-right: 25px;
+              letter-spacing: -1px;
+            }
+            &:nth-child(7) {
+              margin-right: 0px;
+            }
+            @include mq("sp") {
+              margin-right: 0;
+              margin-bottom: 40px;
+              text-align: left;
+              font-size: 2rem;
+            }
+            &:hover {
+              @include hover-bg;
+            }
+          }
+        }
+      }
+      &__icon {
+        display: none;
+        @include mq("pc2") {
+          display: flex;
+        }
+        position: absolute;
+        top: 50%;
+        right: 3vw;
+        -ms-transform: translate(0, -50%);
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        &__twitter {
+          color: rgb(255, 255, 255);
+          margin-right: 16px;
+          &:hover {
+            @include hover-tx($color-orange);
+            -webkit-transform: scale(1.3);
+            -moz-transform: scale(1.3);
+            -o-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            transform: scale(1.3);
+            transition: 0.5s;
+          }
+        }
+        &__connpass {
+          &:hover {
+            -webkit-transform: scale(1.3);
+            -moz-transform: scale(1.3);
+            -o-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            transform: scale(1.3);
+            transition: 0.5s;
+          }
+        }
+      }
     }
+  }
 }
 //headerロゴ非表示
 #logo--off {
-    display: none;
+  display: none;
 }
 #logo_js {
-    position: absolute;
-    top: 50%;
-    left: 3vw;
-    -ms-transform: translate(0,-50%);
-    -webkit-transform: translate(0,-50%);
-    transform: translate(0,-50%);
+  position: absolute;
+  top: 50%;
+  left: 3vw;
+  -ms-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
 
 .header__list.open {
-    transform: translateX(0);
-    @include z-index(drawer-header__right);
+  transform: translateX(0);
+  @include z-index(drawer-header__right);
 }
 
 // ハンバーガーメニュー
 .menu-trigger {
-    display: none;
-    @include mq("sp") {
-        display: inline-block;
-        position: fixed;
-        width: 28px;
-        height: 22px;
-        vertical-align: middle;
-        transition: transform .5s;
-        cursor: pointer;
-        top: 15px;
-        right: 15px;
-        @include z-index(drawer-menu);
+  display: none;
+  @include mq("sp") {
+    display: inline-block;
+    position: fixed;
+    width: 28px;
+    height: 22px;
+    vertical-align: middle;
+    transition: transform 0.5s;
+    cursor: pointer;
+    top: 15px;
+    right: 15px;
+    @include z-index(drawer-menu);
+  }
+  &-span {
+    display: inline-block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 28px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: #333333;
+    transition: all 0.5s;
+    &:nth-of-type(1) {
+      top: 0;
     }
-    &-span {
-        display: inline-block;
-        box-sizing: border-box;
-        position: absolute;
-        left: 0;
-        width: 28px;
-        height: 4px;
-        border-radius: 5px;
-        background-color: #333333;
-        transition: all .5s;
-        &:nth-of-type(1) {
-            top: 0;
-        }
-        &:nth-of-type(2) {
-            top: 50%;
-            position: absolute;
-            -ms-transform: translate(0,-50%);
-            -webkit-transform: translate(0,-50%);
-            transform: translate(0,-50%);
-        }
-        &:nth-of-type(3) {
-            bottom: 0px;
-        }
+    &:nth-of-type(2) {
+      top: 50%;
+      position: absolute;
+      -ms-transform: translate(0, -50%);
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
     }
+    &:nth-of-type(3) {
+      bottom: 0px;
+    }
+  }
 }
 .menu-trigger.active {
-    transform: translateX(-70vw);//"header__listも考慮必要
+  transform: translateX(-70vw); //"header__listも考慮必要
 }
 
 .menu-trigger.active span {
-    background-color: rgb(51, 51, 51);
+  background-color: rgb(51, 51, 51);
 }
 
 .menu-trigger.active span:nth-of-type(1) {
-    transform: translateY(8px) rotate(-45deg);
+  transform: translateY(8px) rotate(-45deg);
 }
 
 .menu-trigger.active span:nth-of-type(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .menu-trigger.active span:nth-of-type(3) {
-    transform: translateY(-9.5px) rotate(45deg);
-}// ハンバーガーメニュー
+  transform: translateY(-9.5px) rotate(45deg);
+} // ハンバーガーメニュー
 
 .overlay {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    @include z-index(drawer-over-lay);
-    opacity: 0;
-    transition: opacity .5s;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include z-index(drawer-over-lay);
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 .overlay.open {
-    width: 100%;
-    height: 100vh;
-    opacity: 1;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
 }
 
 // スクロールすると変更用class
 .scroll {
-    &__nav {
-        height: 80px;
-        transition: .5s;
-    }
-    &__twitter {
-        color: rgb(0, 103, 170);
-        transition: .5s;
-    }
-    &__menu {
-        top: 30px;
-        transition: .5s;
-    }
-    &__header {
-        background: rgb(255, 255,255);
-        transition: .5s;
-    }
+  &__nav {
+    height: 80px;
+    transition: 0.5s;
+  }
+  &__twitter {
+    color: rgb(0, 103, 170);
+    transition: 0.5s;
+  }
+  &__menu {
+    top: 30px;
+    transition: 0.5s;
+  }
+  &__header {
+    background: rgb(255, 255, 255);
+    transition: 0.5s;
+  }
 }
 
 body {
-    width: 100%; /* position:fixed;になった際に幅が変わるのを防ぐ */
+  width: 100%; /* position:fixed;になった際に幅が変わるのを防ぐ */
 }
 
 //トップ画像
 .topimg {
-    position: relative;
-    .top {
-        &__img {
-            height: 1004px;
-            @include mq("sp") {
-                height: 700px;
-            }
-            width: 100%;
-            img {
-                object-fit: cover;
-                object-position: 50% -106px;
-            }
-        } 
-        &__title {
-            @include center-poji;
-            top: 41%;
-            width: 775.26px;
-            height: 313px;
-            @include mq("pc") {
-                width: $layout-rsp;
-                margin: 0 auto;
-                height: auto;
-                top: 35%;
-            }
-            img {
-                width: 100%;
-            }
-        }   
+  position: relative;
+  .top {
+    &__img {
+      height: 1004px;
+      @include mq("sp") {
+        height: 700px;
+      }
+      width: 100%;
+      img {
+        object-fit: cover;
+        object-position: 50% -106px;
+      }
     }
+    &__title {
+      @include center-poji;
+      top: 41%;
+      width: 775.26px;
+      height: 313px;
+      @include mq("pc") {
+        width: $layout-rsp;
+        margin: 0 auto;
+        height: auto;
+        top: 35%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
-    
+
 //開催予定のtable部分の初期化
 table.tabletest {
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
 }
-  
+
 table.tabletest {
-    border: none;
+  border: none;
 }
 
 table.tabletest th,
 table.tabletest td {
-    border: none;
-    vertical-align: bottom;
+  border: none;
+  vertical-align: bottom;
 }
 
-  //開催予定のtable部分
+//開催予定のtable部分
 //sec01
 .sec01 {
-    position: relative;
-    top: -325px;
-    margin-bottom: -205px;
-    &__holding {//開催予定のsection部分
-        margin-bottom: 79px;
-        &__h1 {
-            margin-bottom: 28px;
-            text-align: center;
-            @include font(28, 0, 33, bold);
-            @include mq("sp") {
-                @include font(23, 0, 33, bold);
-            }
+  position: relative;
+  top: -325px;
+  margin-bottom: -205px;
+  &__holding {
+    //開催予定のsection部分
+    margin-bottom: 79px;
+    &__h1 {
+      margin-bottom: 28px;
+      text-align: center;
+      @include font(28, 0, 33, bold);
+      @include mq("sp") {
+        @include font(23, 0, 33, bold);
+      }
+    }
+    &__post {
+      display: flex;
+      width: $layout-width-inner;
+      @include mq("pc") {
+        width: 100%;
+        flex-direction: column;
+      }
+      margin: 0 auto;
+      &__li {
+        width: calc(33.3333% - 20px);
+        position: relative;
+        .span {
+          position: absolute;
+          left: 29px;
         }
-        &__post {
-            display: flex;
-            width: $layout-width-inner;
+        @include mq("pc") {
+          width: $rsp;
+          margin: 0 auto 30px;
+        }
+        box-sizing: border-box;
+        margin-right: 20px;
+        &:nth-child(3) {
+          margin-right: 0;
+          @include mq("pc") {
+            margin: 0 auto 30px;
+          }
+        }
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+        table {
+          box-sizing: border-box;
+          .tr-first {
+            color: rgba(255, 255, 255, 1);
+            height: 20px;
+            @include font(13, 0, 26, medium);
+            &__left {
+              &--appplan {
+                //アプリの場合
+                background: $color-orange;
+                width: 74px;
+                text-align: center;
+              }
+              &--guestplan {
+                //ゲスト講演の場合
+                background: $color-blue;
+                width: 74px;
+                text-align: center;
+              }
+            }
+            &__right {
+              &--appplan {
+                //アプリの場合
+                @include gra-orange;
+                text-align: right;
+              }
+              &--guestplan {
+                //ゲスト講演の場合
+                @include gra-blue;
+                text-align: right;
+              }
+            }
+          }
+          .tr-second {
+            background: rgb(247, 247, 247);
+            @include font(16, 0, 24, bold);
+            letter-spacing: -0.5px;
+            &__left {
+              text-align: center;
+              padding: 15px 11px 6px;
+              span {
+                font-size: 2.4rem;
+              }
+            }
+            &__right {
+              &--appplan {
+                //アプリの場合
+                padding: 13px 4px 12px;
+                color: $color-orange;
+              }
+              &--guestplan {
+                //ゲスト講演の場合
+                padding: 13px 4px 12px;
+                color: $color-blue;
+              }
+            }
+          }
+          .tr-third {
+            @include font(13, 0, 22, medium);
+            background: white;
+            height: auto;
             @include mq("pc") {
-                width: 100%;
-                flex-direction: column;
             }
-            margin: 0 auto;
-            &__li {
-                width: calc(33.3333% - 20px);
-                position: relative;
-                .span {
-                    position: absolute;
-                    left: 29px;
+            &__left {
+              text-align: right;
+              padding-bottom: 0;
+              ul {
+                li {
+                  @include font(13, 0, 26, medium);
+                  display: list-item;
                 }
-                @include mq("pc") {
-                    width: $rsp;
-                    margin: 0 auto 30px;
-                }
-                box-sizing: border-box;
-                margin-right: 20px;
-                &:nth-child(3) {
-                    margin-right: 0;
-                    @include mq("pc") {
-                        margin: 0 auto 30px;
-                    }
-                }
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
-                    table {
-                        box-sizing: border-box;
-                        .tr-first {
-                            color: rgba(255, 255, 255, 1);
-                            height: 20px;
-                            @include font(13, 0, 26, medium);
-                            &__left {
-                                &--appplan {//アプリの場合
-                                    background: $color-orange;
-                                    width: 74px;
-                                    text-align: center;
-                                }
-                                &--guestplan {//ゲスト講演の場合
-                                    background: $color-blue;
-                                    width: 74px;
-                                    text-align: center;
-                                }
-                            }
-                            &__right {
-                                &--appplan {//アプリの場合
-                                    @include gra-orange;
-                                    text-align: right;
-                                }
-                                &--guestplan {//ゲスト講演の場合
-                                    @include gra-blue;
-                                    text-align: right;
-                                }
-                            }
-                        }
-                        .tr-second {
-                            background: rgb(247, 247, 247);
-                            @include font(16, 0, 24, bold);
-                            letter-spacing: -0.5px;
-                            &__left {
-                                text-align: center;
-                                padding: 15px 11px 6px;
-                                span {
-                                    font-size: 2.4rem;
-                                }
-                            }
-                            &__right {
-                                &--appplan {//アプリの場合
-                                    padding: 13px 4px 12px;
-                                    color: $color-orange;
-                                }
-                                &--guestplan {//ゲスト講演の場合
-                                    padding: 13px 4px 12px;
-                                    color: $color-blue;
-                                }
-                            }
-                        }
-                        .tr-third {
-                            @include font(13, 0, 22, medium);
-                            background: white;
-                            height: auto;
-                            @include mq("pc") {
-                            }
-                            &__left {
-                                text-align: right;
-                                padding-bottom: 0;
-                                ul {
-                                    li {
-                                        @include font(13, 0, 26, medium);
-                                        display: list-item;
-                                    }
-                                }
-                            }
-                            &__right {
-                                text-align: left;
-                                padding: 4px 10px 0 6px;
-                                ul {
-                                    li {
-                                        @include font(13, 0, 26, 500);
-                                        display: list-item;
-                                    }
-                                    .text {
-                                        @include font(13, 0, 19, 500);
-                                        padding: 4px 0 0;
-                                    }
-                                }
-                            }
-                        }
-                        .tr-fourth {
-                            td {
-                                text-align: center; 
-                                padding-top: 21px;
-                                height: 45px;
-                            }
-                            a {
-                               @include button;
-                               background: rgb(2, 187, 19);
-                               &:hover {
-                                @include hover-bg;
-                              }
-                            }
-                        }
-                    }    
+              }
             }
+            &__right {
+              text-align: left;
+              padding: 4px 10px 0 6px;
+              ul {
+                li {
+                  @include font(13, 0, 26, 500);
+                  display: list-item;
+                }
+                .text {
+                  @include font(13, 0, 19, 500);
+                  padding: 4px 0 0;
+                }
+              }
+            }
+          }
+          .tr-fourth {
+            td {
+              text-align: center;
+              padding-top: 21px;
+              height: 45px;
+            }
+            a {
+              @include button;
+              background: rgb(2, 187, 19);
+              &:hover {
+                @include hover-bg;
+              }
+            }
+          }
         }
-    }//開催予定のsection部分
+      }
+    }
+  } //開催予定のsection部分
 
-    &__past {//過去のsection部分
-        &__h1 {
-            text-align: center;
-            margin-bottom: 28px;
-            @include font(28, 0, 33, bold);
-            @include mq("sp") {
-                @include font(23, 0, 33, bold);
-            }
+  &__past {
+    //過去のsection部分
+    &__h1 {
+      text-align: center;
+      margin-bottom: 28px;
+      @include font(28, 0, 33, bold);
+      @include mq("sp") {
+        @include font(23, 0, 33, bold);
+      }
+    }
+    &__post {
+      width: $layout-width-inner;
+      @include mq("pc") {
+        width: 100%;
+        flex-direction: column;
+      }
+      margin: 0 auto;
+      display: flex;
+      &__li {
+        width: calc(33.3333% - 20px);
+        @include mq("pc") {
+          width: $rsp;
+          margin: 0 auto 30px;
+          display: flex;
         }
-        &__post {
-            width: $layout-width-inner;
+        @include mq("sp") {
+          flex-direction: column;
+        }
+        box-sizing: border-box;
+        margin-right: 20px;
+        &:nth-child(3) {
+          margin-right: 0;
+          @include mq("pc") {
+            margin: 0 auto 30px;
+          }
+        }
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+        .caption {
+          //過去イベントのimgのcss
+          position: relative;
+          margin-bottom: 9px;
+          @include mq("pc") {
+            width: 50%;
+            margin-bottom: 0;
+          }
+          @include mq("sp") {
+            width: 100%;
+          }
+          &__img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
             @include mq("pc") {
-                width: 100%;
-                flex-direction: column;
+              height: 100%;
             }
-            margin: 0 auto;
-            display: flex;
-            &__li {
-                width: calc(33.3333% - 20px);
-                @include mq("pc") {
-                    width: $rsp;
-                    margin: 0 auto 30px;
-                    display: flex;
-                }
-                @include mq("sp") {
-                    flex-direction: column;
-                }
-                box-sizing: border-box;
-                margin-right: 20px;
-                &:nth-child(3) {
-                    margin-right: 0;
-                    @include mq("pc") {
-                        margin: 0 auto 30px;
-                    }
-                }
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
-                .caption {//過去イベントのimgのcss
-                    position: relative;
-                    margin-bottom: 9px;
-                    @include mq("pc") {
-                        width: 50%;
-                        margin-bottom: 0;
-                    }
-                    @include mq("sp") {
-                        width: 100%;
-                    }
-                    &__img {
-                        height: 180px;
-                        width: 100%;
-                        object-fit: cover;
-                        @include mq("pc") {
-                            height: 100%;
-                        }
-                        img {
-                            object-fit: cover;
-                            @include mq("pc") {
-                                max-height: 250px;
-                            }
-                        }
-                        &__end {
-                            position: absolute;
-                            bottom: 0;
-                            right: 0;
-                            background: rgb(16, 16, 16);
-                            width: 50px;
-                            padding: 8px;
-                            text-align: center;
-                            color: white;
-                            &:hover {
-                                background: lighten(rgb(16, 16, 16), 20%);
-                                transition: .5s;
-                            }
-                            i {
-                                font-size: 1.1em 
-                            }
-                            p {
-                                @include font(13, 0, 19, 500);
-                            }
-                            a {
-                                display: block;
-                            }
-                        }
-                    }
-                }
-                .caption__right {
-                    @include mq("pc") {
-                        display: flex;
-                        flex-direction: column;
-                        width: 50%;
-                        padding: 10px;
-                        box-sizing: border-box;
-                    }
-                    @include mq("sp") {
-                        width: 100%;
-                    }
-                    h2 {
-                        span {
-                            @include font(13, 0, 26, 500);
-                            color: white;
-                            text-align: center;
-                            padding: 1px 15px 1px 16px;
-                            margin-right: 12px;
-                        }
-                        .app {
-                            @include gra-orange;
-                        }
-                        .guest {
-                            @include gra-blue;
-                        }
-                        @include font(13, 0, 19, 500);
-                        margin-bottom: 10px;
-                        padding: 0 10px;
-                    }
-                    h3 {
-                        @include font(16, 0, 24, bold);
-                        margin-bottom: 5px;
-                        padding: 0 10px;
-                    }
-                    table {
-                        line-height: 1.4;
-                        td {
-                            @include font(13, 0, 26, 500);
-                            padding: 0;
-                        }
-                        .td__left {
-                            &--app {//アプリの場合
-                                width: 54px;
-                                text-align: right;
-                                padding-left: 20px;
-                                position: relative;
-                                span {
-                                    position: absolute;
-                                    left: 22px;
-                                }
-                            }
-                        }
-                        .td__right {
-                            padding: 4px 10px 10px 0px;
-                            @include font(13, 0, 19, 500);
-                        }
-                    }                  
-                }
+            img {
+              object-fit: cover;
+              @include mq("pc") {
+                max-height: 250px;
+              }
             }
+            &__end {
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              background: rgb(16, 16, 16);
+              width: 50px;
+              padding: 8px;
+              text-align: center;
+              color: white;
+              &:hover {
+                background: lighten(rgb(16, 16, 16), 20%);
+                transition: 0.5s;
+              }
+              i {
+                font-size: 1.1em;
+              }
+              p {
+                @include font(13, 0, 19, 500);
+              }
+              a {
+                display: block;
+              }
+            }
+          }
         }
-    }//過去のsection部分
+        .caption__right {
+          @include mq("pc") {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+          }
+          @include mq("sp") {
+            width: 100%;
+          }
+          h2 {
+            span {
+              @include font(13, 0, 26, 500);
+              color: white;
+              text-align: center;
+              padding: 1px 15px 1px 16px;
+              margin-right: 12px;
+            }
+            .app {
+              @include gra-orange;
+            }
+            .guest {
+              @include gra-blue;
+            }
+            @include font(13, 0, 19, 500);
+            margin-bottom: 10px;
+            padding: 0 10px;
+          }
+          h3 {
+            @include font(16, 0, 24, bold);
+            margin-bottom: 5px;
+            padding: 0 10px;
+          }
+          table {
+            line-height: 1.4;
+            td {
+              @include font(13, 0, 26, 500);
+              padding: 0;
+            }
+            .td__left {
+              &--app {
+                //アプリの場合
+                width: 54px;
+                text-align: right;
+                padding-left: 20px;
+                position: relative;
+                span {
+                  position: absolute;
+                  left: 22px;
+                }
+              }
+            }
+            .td__right {
+              padding: 4px 10px 10px 0px;
+              @include font(13, 0, 19, 500);
+            }
+          }
+        }
+      }
+    }
+  } //過去のsection部分
 }
 //sec01
 
-.sec02 {//profile
-    // background: rgb(247, 247, 247);
-    @include bg-stripe(rgb(247, 247, 247), 1);
-    @include mq("sp") {
-        @include bg-stripe(rgb(247, 247, 247), 0.2);
+.sec02 {
+  //profile
+  // background: rgb(247, 247, 247);
+  @include bg-stripe(rgb(247, 247, 247), 1);
+  @include mq("sp") {
+    @include bg-stripe(rgb(247, 247, 247), 0.2);
+  }
+  vertical-align: bottom;
+  position: relative;
+  .profile {
+    width: $layout-width-inner;
+    @include mq("pc2-less") {
+      width: $rsp;
+      margin: 0 auto;
     }
-    vertical-align: bottom;
-    position: relative;
-    .profile {
-        width: $layout-width-inner;
+    margin: 0 auto;
+    padding-bottom: 82px;
+    h2 {
+      text-align: center;
+      @include font(42, 0, 33, 800);
+      margin-bottom: 43px;
+      -ms-transform: translate(0, -50%);
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      @include mq("sp") {
+        @include font(30, 0, 33, bold);
+      }
+    }
+    &__about {
+      display: flex;
+      margin-bottom: 40px;
+      @include mq("pc") {
+        flex-direction: column;
+      }
+      &__img {
+        margin-right: 30.6px;
+        @include mq("pc") {
+          text-align: center;
+          margin-bottom: 30px;
+        }
+        img {
+          object-fit: cover;
+        }
+      }
+      &__text {
+        width: auto;
         @include mq("pc2-less") {
-            width: $rsp;
-            margin: 0 auto;
+          width: $rsp;
+          margin: 0 auto;
         }
-        margin: 0 auto;
-        padding-bottom: 82px;
         h2 {
-            text-align: center;
-            @include font(42, 0, 33, 800);
-            margin-bottom: 43px;
-            -ms-transform: translate(0,-50%);
-            -webkit-transform: translate(0,-50%);
-            transform: translate(0,-50%);
-            @include mq("sp") {
-                @include font(30, 0, 33, bold);
-            }
+          @include font(22, 0, 33, bold);
+          text-align: left;
+          margin-bottom: 20px;
+          @include mq("sp") {
+            @include font(18, 0, 33, bold);
+          }
         }
-        &__about {
-            display: flex;
-            margin-bottom: 40px;
-            @include mq("pc") {
-                flex-direction: column;
-            }
-            &__img {
-                margin-right: 30.6px;
-                @include mq("pc") {
-                    text-align: center;
-                    margin-bottom: 30px;
-                }
-                img {
-                    object-fit: cover;
-                }
-            }
-            &__text {
-                width: auto;
-                @include mq("pc2-less") {
-                    width: $rsp;
-                    margin: 0 auto;
-                }
-                h2 {
-                    @include font(22, 0, 33, bold);
-                    text-align: left;
-                    margin-bottom: 20px;
-                    @include mq("sp") {
-                        @include font(18, 0, 33, bold);
-                    }
-                }
-                p {
-                    @include font(16, 0, 32, 400);
-                    text-align: left;
-                }
-            }
-            &__bt {
-                display: block;
-                @include button;
-                background: rgb(16, 16, 16);
-                width: 200px;
-                box-sizing: border-box;
-                &:hover {
-                    @include hover-bg; 
-                }
-                margin: 0 auto 50px;
-            }
+        p {
+          @include font(16, 0, 32, 400);
+          text-align: left;
         }
-        h3 {
-            @include font(22, 0, 33, 800);
-            text-align: center;
-            margin-bottom: 20px;
+      }
+      &__bt {
+        display: block;
+        @include button;
+        background: rgb(16, 16, 16);
+        width: 200px;
+        box-sizing: border-box;
+        &:hover {
+          @include hover-bg;
         }
-        &__foot {
-            @include font(16, 0, 24, bold);
-            text-align: center;
-        }
+        margin: 0 auto 50px;
+      }
     }
-}//sec02
+    h3 {
+      @include font(22, 0, 33, 800);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    &__foot {
+      @include font(16, 0, 24, bold);
+      text-align: center;
+    }
+  }
+} //sec02
 
 .sec03 {
-    width: 100%;
-    &__li {
-        position: relative;
-        display: block;
-    }
-    &__hero {//背景
-        &--app {//appの場合
-            position: absolute;
-            top: -1px;
-            left: 0;
-            @include z-index(back);
-            @include mq("sp") {
-                display: none;
-            }
-        }
-        &--guest {
-            position: absolute;
-            top: -1px;
-            right: 0;
-            @include z-index(back);
-            @include mq("sp") {
-                display: none;
-            }
-        }
-    }
-    &__rsp {//rspの背景画像
-        &--app {
+  width: 100%;
+  &__li {
+    position: relative;
+    display: block;
+  }
+  &__hero {
+    //背景
+    &--app {
+      //appの場合
+      position: absolute;
+      top: -1px;
+      left: 0;
+      @include z-index(back);
+      @include mq("sp") {
         display: none;
-        @include mq("sp") {
-            display: inline;
-            position: absolute;
-            top: -1px;
-            left: 0;
-            width: 64vw;
-            height: 26.666vw;
-            @include z-index(back);
-            }
-        }
-        &--guest {
-            display: none;
-            @include mq("sp") {
-                display: inline;
-                position: absolute;
-                top: -1px;
-                right: 0;
-                width: 64vw;
-                height: 26.666vw;
-                @include z-index(back);
-            }
-        }
+      }
     }
-    &__top {//01 APP... imge等
-        width: 1300px;
-        padding-top: 97.3px;
-        margin: 0 auto 100px;
+    &--guest {
+      position: absolute;
+      top: -1px;
+      right: 0;
+      @include z-index(back);
+      @include mq("sp") {
+        display: none;
+      }
+    }
+  }
+  &__rsp {
+    //rspの背景画像
+    &--app {
+      display: none;
+      @include mq("sp") {
+        display: inline;
+        position: absolute;
+        top: -1px;
+        left: 0;
+        width: 64vw;
+        height: 26.666vw;
+        @include z-index(back);
+      }
+    }
+    &--guest {
+      display: none;
+      @include mq("sp") {
+        display: inline;
+        position: absolute;
+        top: -1px;
+        right: 0;
+        width: 64vw;
+        height: 26.666vw;
+        @include z-index(back);
+      }
+    }
+  }
+  &__top {
+    //01 APP... imge等
+    width: 1300px;
+    padding-top: 97.3px;
+    margin: 0 auto 100px;
+    position: relative;
+    @include mq("pc2-less") {
+      width: $rsp;
+    }
+    @include mq("pc") {
+      margin: 0 auto 25.8px;
+    }
+    @include mq("sp") {
+      padding-top: 10px;
+    }
+    &__title {
+      //01など
+      &--app {
+        //appの場合
+        margin-bottom: 170px;
+        @include mq("pc") {
+          margin-bottom: 15px;
+        }
+        @include mq("sp") {
+          height: 48.8px;
+          img {
+            object-fit: cover;
+          }
+        }
+      }
+      &--guest {
+        //guestの場合
+        margin-bottom: 170px;
+        text-align: end;
+        @include mq("pc") {
+          margin-bottom: 15px;
+        }
+        @include mq("sp") {
+          height: 48.8px;
+          img {
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    &__h2 {
+      //App D...
+      &--app {
+        //appの場合
+        @include font(80, 0, 33, 800);
+        color: rgb(247, 247, 247);
+        @include mq("pc") {
+          @include font(50, 0, 20, 800);
+          text-align: end;
+          margin-bottom: 30px;
+        }
+        @include mq("sp") {
+          @include font(27, 0, 11, 800);
+          color: rgb(237, 237, 237); //sp時色変更
+        }
+      }
+      &--guest {
+        //guestの場合
+        @include font(80, 0, 33, 800);
+        color: rgb(247, 247, 247);
+        text-align: end;
+        @include mq("pc") {
+          @include font(50, 0, 20, 800);
+          margin-bottom: 30px;
+          text-align: start;
+        }
+        @include mq("sp") {
+          @include font(27, 0, 11, 800);
+          color: rgb(237, 237, 237);
+        }
+      }
+    }
+    &__img {
+      &--app {
+        //appの場合 写真
+        width: 682px;
+        height: 383.25px;
+        position: absolute;
+        right: 0;
+        bottom: -30px;
+        @include z-index(back);
+        @include mq("pc") {
+          width: 100%;
+          position: static;
+          height: 51.266vw;
+        }
+        img {
+          object-fit: cover;
+        }
+      }
+      &--guest {
+        //guestの場合
+        width: 682px;
+        height: 383.25px;
+        position: absolute;
+        left: 0;
+        bottom: -30px;
+        @include z-index(back);
+        @include mq("pc") {
+          width: 100%;
+          position: static;
+          height: 51.266vw;
+        }
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  &__text {
+    margin: 0 auto;
+    width: $layout-width-inner;
+    @include mq("pc") {
+      width: $rsp;
+      margin: 0 auto;
+    }
+    &__head-h2 {
+      @include font(28, 0, 33, bold);
+      margin-bottom: 22px;
+      @include mq("sp") {
+        @include font(23, 0, 33, bold);
+      }
+    }
+    &__head-p {
+      @include font(16, 0, 32, 400);
+      margin-bottom: 80px;
+    }
+    &__foot-h2 {
+      @include font(28, 0, 33, bold);
+      margin-bottom: 30px;
+      @include mq("sp") {
+        @include font(23, 0, 33, bold);
+      }
+    }
+    &__foot-ul {
+      margin-bottom: 100px;
+      display: flex;
+      @include mq("sp") {
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+      &__li {
+        width: calc(33.33% - 15px);
+        height: 143px;
+        @include bg-stripe(rgb(247, 247, 247), 1);
+        @include mq("sp") {
+          @include bg-stripe(rgb(247, 247, 247), 0.2);
+        }
+        margin-right: 15px;
         position: relative;
-        @include mq("pc2-less") {
-            width: $rsp; 
+        p {
+          @include font(18, 0, 32, bold);
+          line-height: 1.5;
+          @include center-poji;
+          width: $layout-rsp;
+          text-align: center;
         }
-        @include mq("pc") {
-            margin: 0 auto 25.8px;
+        .app {
+          color: $color-orange;
+        }
+        .guest {
+          color: $color-blue;
         }
         @include mq("sp") {
-            padding-top: 10px;
+          width: 100%;
+          margin: 0 0 15px;
         }
-        &__title {//01など
-            &--app {//appの場合
-                margin-bottom: 170px;
-                @include mq("pc") {
-                    margin-bottom: 15px;
-                }
-                @include mq("sp") {
-                    height: 48.8px;
-                    img {
-                        object-fit: cover;
-                    }
-                }
-            }
-            &--guest {//guestの場合
-                margin-bottom: 170px;
-                text-align: end;
-                @include mq("pc") {
-                    margin-bottom: 15px;
-                }
-                @include mq("sp") {
-                    height: 48.8px;
-                    img {
-                        object-fit: cover;
-                    }
-                }
-            }
+        &:nth-child(3) {
+          margin-right: 0;
+          @include mq("sp") {
+            margin-bottom: 0;
+          }
         }
-        &__h2 {//App D... 
-            &--app {//appの場合
-                @include font(80, 0, 33, 800);
-                color: rgb(247, 247, 247);
-                @include mq("pc") {
-                    @include font(50, 0, 20, 800);
-                    text-align: end;
-                    margin-bottom: 30px;
-                }
-                @include mq("sp") {
-                    @include font(27, 0, 11, 800);
-                    color: rgb(237, 237, 237);//sp時色変更
-                }      
-            }
-            &--guest {//guestの場合
-                @include font(80, 0, 33, 800);
-                color: rgb(247, 247, 247);
-                text-align: end;
-                @include mq("pc") {
-                    @include font(50, 0, 20, 800);
-                    margin-bottom: 30px;
-                    text-align: start;
-                }
-                @include mq("sp") {
-                    @include font(27, 0, 11, 800);
-                    color: rgb(237, 237, 237);
-                }  
-            }
-        }
-        &__img {
-            &--app {//appの場合 写真
-                width: 682px;
-                height: 383.25px;
-                position: absolute;
-                right: 0;
-                bottom: -30px;
-                @include z-index(back);
-                @include mq("pc") {
-                    width: 100%;
-                    position: static;
-                    height: 51.266vw;
-                }
-                img {
-                    object-fit: cover;
-                }
-            }
-            &--guest {//guestの場合
-                width: 682px;
-                height: 383.25px;
-                position: absolute;
-                left: 0;
-                bottom: -30px;
-                @include z-index(back);
-                @include mq("pc") {
-                    width: 100%;
-                    position: static;
-                    height: 51.266vw;
-                }
-                img {
-                    object-fit: cover;
-                }
-            }
-        }
+      }
     }
-    &__text {
-        margin: 0 auto;
-        width: $layout-width-inner;
-        @include mq("pc") {
-            width: $rsp;
-            margin: 0 auto;
+    &__more {
+      &--app {
+        //appの場合
+        display: block;
+        @include button;
+        @include gra-orange;
+        padding: 13px 0;
+        width: 420px;
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-bottom: 80px;
+        transition: background-position 0.2s;
+        @include mq("sp") {
+          width: 100%;
+          padding: 11px 0;
         }
-        &__head-h2 {
-            @include font(28, 0, 33, bold);
-            margin-bottom: 22px;
-            @include mq("sp") {
-                @include font(23, 0, 33, bold);
-            }
+        &:hover {
+          @include hover-bg;
         }
-        &__head-p {
-            @include font(16, 0, 32, 400);
-            margin-bottom: 80px;
+      }
+      &--guest {
+        //guestの場合
+        display: block;
+        @include button;
+        @include gra-blue;
+        padding: 13px 0;
+        width: 420px;
+        box-sizing: border-box;
+        margin-bottom: 80px;
+        @include mq("sp") {
+          width: 100%;
+          padding: 11px 0;
         }
-        &__foot-h2 {
-            @include font(28, 0, 33, bold);
-            margin-bottom: 30px;
-            @include mq("sp") {
-                @include font(23, 0, 33, bold);
-            }
+        &:hover {
+          @include hover-bg;
         }
-        &__foot-ul {
-            margin-bottom: 100px;
-            display: flex;
-            @include mq("sp") {
-                flex-direction: column;
-                margin-bottom: 20px;
-            }
-            &__li {
-                width: calc(33.33% - 15px);
-                height: 143px;
-                @include bg-stripe(rgb(247, 247, 247), 1);
-                @include mq("sp") {
-                    @include bg-stripe(rgb(247, 247, 247), 0.2);
-                }
-                margin-right: 15px;
-                position: relative;
-                p {
-                    @include font(18, 0, 32, bold);
-                    line-height: 1.5;
-                    @include center-poji;
-                    width: $layout-rsp;
-                    text-align: center;
-                }
-                .app {
-                    color: $color-orange;
-                }
-                .guest {
-                    color: $color-blue;
-                }
-                @include mq("sp") {
-                    width: 100%;
-                    margin: 0 0 15px;
-                }
-                &:nth-child(3) {
-                    margin-right: 0;
-                    @include mq("sp") {
-                        margin-bottom: 0;
-                    }
-                }
-            }
-        }
-        &__more {
-            &--app {//appの場合
-                display: block;
-                @include button;
-                @include gra-orange;
-                padding: 13px 0;
-                width: 420px;
-                box-sizing: border-box;
-                margin-left: auto;
-                margin-bottom: 80px;
-                transition:background-position 0.2s;
-                @include mq("sp") {
-                    width: 100%;
-                    padding: 11px 0;
-                }
-                &:hover {
-                    @include hover-bg;
-                }
-            }
-            &--guest {//guestの場合
-                display: block;
-                @include button;
-                @include gra-blue;
-                padding: 13px 0;
-                width: 420px;
-                box-sizing: border-box;
-                margin-bottom: 80px;
-                @include mq("sp") {
-                    width: 100%;
-                    padding: 11px 0;
-                }
-                &:hover {
-                    @include hover-bg;
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 .sec04 {
-    padding-top: 92px;
-    width: $layout-width-inner;
-    @include mq("pc") {
-        width: 100%;
-        margin: 0 auto;
-        padding-top: 60px;
-        box-sizing: border-box;
-    }
-    @include mq("sp") {
-        width: $rsp;
-    }
+  padding-top: 92px;
+  width: $layout-width-inner;
+  @include mq("pc") {
+    width: 100%;
     margin: 0 auto;
-    h2 {
-        text-align: center;
-        @include font(42, 0, 33, 800);
-        margin-bottom: 54px;
-        @include mq("sp") {
-            @include font(30, 0, 33, bold);
-        }
+    padding-top: 60px;
+    box-sizing: border-box;
+  }
+  @include mq("sp") {
+    width: $rsp;
+  }
+  margin: 0 auto;
+  h2 {
+    text-align: center;
+    @include font(42, 0, 33, 800);
+    margin-bottom: 54px;
+    @include mq("sp") {
+      @include font(30, 0, 33, bold);
     }
-    p {
-        margin: 0 auto 20px;
-        @include font(16, 0, 40, 400);
-        @include mq("pc") {
-            width: $rsp;
-        }
+  }
+  p {
+    margin: 0 auto 20px;
+    @include font(16, 0, 40, 400);
+    @include mq("pc") {
+      width: $rsp;
     }
+  }
 }
 
 footer {
-    .polygon {
-        width: 100%;
+  .polygon {
+    width: 100%;
+  }
+  .footer {
+    position: relative;
+    @include bg-stripe(rgb(51, 51, 51), 0.1);
+    &__title {
+      @include font(42, 0, 33, 800);
+      text-align: center;
+      -ms-transform: translate(0, -50%);
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      margin-bottom: 43px;
+      @include mq("sp") {
+        @include font(30, 0, 33, bold);
+      }
     }
-    .footer {
-        position: relative;
-        @include bg-stripe(rgb(51, 51, 51), 0.1);
+    &__ul {
+      display: flex;
+      width: $layout-width-inner;
+      margin: 0 auto;
+      padding-bottom: 107px;
+      @include mq("pc") {
+        width: 60%;
+        flex-wrap: wrap;
+        padding-bottom: 43px;
+      }
+      @include mq("sp") {
+        width: $rsp;
+      }
+      @include z-index(drawer-over-lay);
+      .twitter_timeline {
+        iframe {
+          width: 647px !important; //iosのバグの為記述
+          height: 329px !important; //iosのバグの為記述
+          @include mq("pc") {
+            height: 200px !important;
+          }
+        }
+        padding: 0;
+        width: 229px;
+        @include mq("pc") {
+          height: 178px;
+          width: 100%;
+          box-sizing: border-box;
+        }
+        @include mq("sp") {
+          height: 144px;
+        }
+      }
+      &__li {
+        background-color: rgb(255, 255, 255);
+        width: calc(25% - 20px);
+        margin-right: 20px;
+        min-height: 200px;
+        box-sizing: border-box;
+        &:nth-child(4) {
+          margin-right: 0;
+          @include mq("pc") {
+            margin-right: auto;
+          }
+        }
+        @include mq("pc") {
+          display: flex;
+          width: 100%;
+          margin: 0 auto 20px;
+          position: relative;
+          padding: 20px;
+          &:nth-child(4) {
+            margin-bottom: 0;
+          }
+        }
+        @include mq("sp") {
+          padding: 20px;
+        }
+        .footer-rsp {
+          @include mq("pc") {
+            width: 60%;
+            box-sizing: border-box;
+            position: relative;
+          }
+        }
+        .left {
+          @include mq("pc") {
+            width: 40%;
+          }
+        }
+        &__icon {
+          width: 124px;
+          height: 124px;
+          margin: 21px auto 15px;
+          @include mq("pc") {
+            margin: 0 auto 15px;
+          }
+          @include mq("sp") {
+            width: 100px;
+            height: 100px;
+          }
+          img {
+            background: rgb(243, 243, 243);
+            border-radius: 50%;
+            object-fit: scale-down;
+          }
+        }
         &__title {
-            @include font(42, 0, 33, 800);
-            text-align: center;
-            -ms-transform: translate(0,-50%);
-            -webkit-transform: translate(0,-50%);
-            transform: translate(0,-50%);
-            margin-bottom: 43px;
-            @include mq("sp") {
-                @include font(30, 0, 33, bold);
-            }
+          @include font(16, 0, 24, bold);
+          text-align: center;
+          margin-bottom: 18px;
+          @include mq("pc") {
+            margin-bottom: 0;
+          }
         }
-        &__ul {
-            display: flex;
-            width: $layout-width-inner;
+        &__text {
+          @include font(13, 0, 19, 500);
+          width: 200px;
+          margin: 0 auto 7px;
+          @include mq("pc") {
+            width: auto;
+            margin-bottom: 0;
+          }
+        }
+        &__more {
+          display: block;
+          @include button;
+          background: rgb(16, 16, 16);
+          width: 200px;
+          box-sizing: border-box;
+          &:hover {
+            @include hover-bg;
+          }
+          margin: 0 auto 23px;
+          @include mq("pc") {
             margin: 0 auto;
-            padding-bottom: 107px;
-            @include mq("pc") {
-                width: 60%;
-                flex-wrap: wrap;
-                padding-bottom: 43px;
-            }
-            @include mq("sp") {
-                width: $rsp;
-            }
-            @include z-index(drawer-over-lay);
-            .twitter_timeline {
-                iframe {
-                    width: 647px!important;//iosのバグの為記述
-                    height: 329px!important;//iosのバグの為記述
-                    @include mq("pc") {
-                        height: 200px!important;
-                    }
-                }
-                padding: 0;
-                width: 229px;
-                @include mq("pc") {
-                    height: 178px;
-                    width: 100%;
-                    box-sizing: border-box;
-                }
-                @include mq("sp") {
-                    height: 144px;
-                }
-            } 
-            &__li {
-                background-color: rgb(255, 255, 255);
-                width: calc(25% - 20px);
-                margin-right: 20px;
-                min-height: 200px;
-                box-sizing: border-box;
-                &:nth-child(4) {
-                    margin-right: 0;
-                    @include mq("pc") {
-                        margin-right: auto;
-                    }
-                }
-                @include mq("pc") {
-                    display: flex;
-                    width:  100%;
-                    margin: 0 auto 20px;
-                    position: relative;
-                    padding: 20px;
-                    &:nth-child(4) {
-                        margin-bottom: 0;
-                    }
-                }
-                @include mq("sp") {
-                    padding: 20px;
-                }
-                .footer-rsp {
-                    @include mq("pc") {
-                        width: 60%;
-                        box-sizing: border-box;
-                        position: relative;
-                    }
-                }
-                .left {
-                    @include mq("pc") {
-                        width: 40%;
-                    }
-                }
-                &__icon {
-                    width: 124px;
-                    height: 124px;
-                    margin: 21px auto 15px;
-                    @include mq("pc") {
-                        margin: 0 auto 15px;
-                    }
-                    @include mq("sp") {
-                        width: 100px;
-                        height: 100px;
-                    }
-                    img {
-                        background: rgb(243, 243, 243);
-                        border-radius: 50%;
-                        object-fit: scale-down;
-                    }
-                }
-                &__title {
-                    @include font(16, 0, 24, bold);
-                    text-align: center;
-                    margin-bottom: 18px;
-                    @include mq("pc") {
-                        margin-bottom: 0;
-                    }
-                }
-                &__text {
-                    @include font(13, 0, 19, 500);
-                    width: 200px;
-                    margin: 0 auto 7px;
-                    @include mq("pc") {
-                        width: auto;
-                        margin-bottom: 0;
-                    }
-                }
-                &__more {
-                    display: block;
-                    @include button;
-                    background: rgb(16, 16, 16);
-                    width: 200px;
-                    box-sizing: border-box;
-                    &:hover {
-                        @include hover-bg; 
-                    }
-                    margin: 0 auto 23px;
-                    @include mq("pc") {
-                        margin: 0 auto;
-                        line-height: 1;
-                        position: absolute;
-                        bottom: 0px;
-                        left: 50%;
-                        -ms-transform: translate(-50%,0);
-                        -webkit-transform: translate(-50%,0);
-                        transform: translate(-50%,0);
-                    }
-                    @include mq("sp") {
-                        padding: 8px auto;
-                        width: 100%;
-                    }
-                }
-            }
+            line-height: 1;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            -ms-transform: translate(-50%, 0);
+            -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+          }
+          @include mq("sp") {
+            padding: 8px auto;
+            width: 100%;
+          }
         }
+      }
     }
-    .icon {
-        text-align: center;
-        height: 130px;
-        position: relative;
-        .center {
-            display: flex;
-            @include center-poji;
+  }
+  .icon {
+    text-align: center;
+    height: 130px;
+    position: relative;
+    .center {
+      display: flex;
+      @include center-poji;
+    }
+    a {
+      display: block;
+      height: initial;
+      &:nth-child(1) {
+        margin-right: 57px;
+        @include mq("sp") {
+          margin-right: 20px;
         }
-        a {
-            display: block;
-            height: initial;
-            &:nth-child(1) {
-                margin-right: 57px;
-                @include mq("sp") {
-                    margin-right: 20px;
-                }
-            }
-            &:hover {
-                @include hover-bg;
-            }
-        }
+      }
+      &:hover {
+        @include hover-bg;
+      }
     }
-    h5 {
-        color: rgb(247, 247, 247);
-        background: rgb(16, 16, 16);
-        @include font(13, 0, 19, 500);
-        text-align: center;
-        padding: 7px 0 8px;
-    }
+  }
+  h5 {
+    color: rgb(247, 247, 247);
+    background: rgb(16, 16, 16);
+    @include font(13, 0, 19, 500);
+    text-align: center;
+    padding: 7px 0 8px;
+  }
 }

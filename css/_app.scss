@@ -1,168 +1,184 @@
 .sec07 {
-    width: $rsp;
+  width: $rsp;
+  margin: 0 auto;
+  &__ul {
+    width: $layout-width-inner;
+    // @include mq("pc2") {
+    //     width: 100%;
+    // }
     margin: 0 auto;
-    &__ul {
-        width: $layout-width-inner;
-        // @include mq("pc2") {
-        //     width: 100%;
-        // }
-        margin: 0 auto;
-        @include mq("pc2-less") {
-            width: 100%;
-        }
-        .anchor {
-            display: block;
-            padding-top: 130px;
-            margin-top: -130px;
-        }
-        &__li {
-            width: 100%;
-            .time {
-                @include font(16, 0, 24, bold);
-            }
-            .title {
-                @include font(28, 0, 42, bold);
-                margin-bottom: 20px;
-                @include mq("sp") {
-                    @include font(23, 0, 33, bold);
-                }
-            }
-            .img {
-                width: 100%;
-                max-width: 999px;
-                margin: 0 auto;
-                img {
-                    object-fit: cover;
-                }
-            }
-            .about {
-                position: relative;
-                top: -140px;
-                width: 800px;
-                @include mq("pc") {
-                    width: 95%;
-                    top: -7.291vw;
-                }
-                margin: 0 auto 10px;
-                background-color: rgba(247, 247, 247, 0.92);
-                &__in {
-                    &--app {//appの場合
-                        width: 740px;
-                        @include mq("pc") {
-                            width: 95%;
-                        }
-                        margin: 0 auto;
-                        padding-bottom: 32px;
-                        //縦線
-                        border-top: 10px solid;
-                        border-image: linear-gradient(to right, rgb(249, 212, 35), rgb(230, 92, 0));
-                        border-image: -moz-linear-gradient(left, rgb(249, 212, 35), rgb(230, 92, 0));
-                        border-image: -webkit-linear-gradient(left, rgb(249, 212, 35), rgb(230, 92, 0));
-                        border-image-slice: 1;
-                        //縦線
-                    }
-                    &--guest {//appの場合
-                        width: 740px;
-                        @include mq("pc") {
-                            width: 95%;
-                        }
-                        margin: 0 auto;
-                        padding-bottom: 32px;
-                        //縦線
-                        border-top: 10px solid;
-                        border-image: linear-gradient(to left, #0083B0, #36D1DC);
-                        border-image: -moz-linear-gradient(right, #0083B0, #36D1DC);
-                        border-image: -webkit-linear-gradient(right, #0083B0, #36D1DC);
-                        border-image-slice: 1;
-                        //縦線
-                    }
-                }
-                .category {
-                    &--app {//appの場合
-                        width: 110px;
-                        margin-left: auto;
-                        @include gra-orange;
-                        color: rgb(247, 247, 247);
-                        @include font(13, 0, 26, 500);
-                        line-height: normal;
-                        text-align: center;
-                    }
-                    &--guest {//guestの場合
-                        width: 110px;
-                        margin-left: auto;
-                        @include gra-blue;
-                        color: rgb(247, 247, 247);
-                        @include font(13, 0, 26, 500);
-                        line-height: normal;
-                        text-align: center;
-                    }
-                }
-                table {
-                    @include font(13, 0, 26, 500);
-                    line-height: 1.5;
-                    width: 325px;
-                    margin-bottom: 20px;
-                    @include mq("sp") {
-                        width: 100%;
-                    }
-                    td {
-                        padding: 0;
-                        position: relative;
-                        span {
-                            position: absolute;
-                            right: 0;
-                        }
-                        &:first-child {
-                            width: 52px;
-                        }
-                    }
-                }
-                .text {
-                    @include font(16, 0, 32, 400);
-                    margin-bottom: 20px;
-                }
-                .iframe-wrap {
-                    position: relative;
-                    width: 100%;
-                    padding-top: 56.756%; /* = height ÷ width × 100 */
-                    iframe {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-            }
-        }
+    @include mq("pc2-less") {
+      width: 100%;
     }
+    .anchor {
+      display: block;
+      padding-top: 130px;
+      margin-top: -130px;
+    }
+    &__li {
+      width: 100%;
+      .time {
+        @include font(16, 0, 24, bold);
+      }
+      .title {
+        @include font(28, 0, 42, bold);
+        margin-bottom: 20px;
+        @include mq("sp") {
+          @include font(23, 0, 33, bold);
+        }
+      }
+      .img {
+        width: 100%;
+        max-width: 999px;
+        margin: 0 auto;
+        img {
+          object-fit: cover;
+        }
+      }
+      .about {
+        position: relative;
+        top: -140px;
+        width: 800px;
+        @include mq("pc") {
+          width: 95%;
+          top: -7.291vw;
+        }
+        margin: 0 auto 10px;
+        background-color: rgba(247, 247, 247, 0.92);
+        &__in {
+          &--app {
+            //appの場合
+            width: 740px;
+            @include mq("pc") {
+              width: 95%;
+            }
+            margin: 0 auto;
+            padding-bottom: 32px;
+            //縦線
+            border-top: 10px solid;
+            border-image: linear-gradient(
+              to right,
+              rgb(249, 212, 35),
+              rgb(230, 92, 0)
+            );
+            border-image: -moz-linear-gradient(
+              left,
+              rgb(249, 212, 35),
+              rgb(230, 92, 0)
+            );
+            border-image: -webkit-linear-gradient(
+              left,
+              rgb(249, 212, 35),
+              rgb(230, 92, 0)
+            );
+            border-image-slice: 1;
+            //縦線
+          }
+          &--guest {
+            //appの場合
+            width: 740px;
+            @include mq("pc") {
+              width: 95%;
+            }
+            margin: 0 auto;
+            padding-bottom: 32px;
+            //縦線
+            border-top: 10px solid;
+            border-image: linear-gradient(to left, #0083b0, #36d1dc);
+            border-image: -moz-linear-gradient(right, #0083b0, #36d1dc);
+            border-image: -webkit-linear-gradient(right, #0083b0, #36d1dc);
+            border-image-slice: 1;
+            //縦線
+          }
+        }
+        .category {
+          &--app {
+            //appの場合
+            width: 110px;
+            margin-left: auto;
+            @include gra-orange;
+            color: rgb(247, 247, 247);
+            @include font(13, 0, 26, 500);
+            line-height: normal;
+            text-align: center;
+          }
+          &--guest {
+            //guestの場合
+            width: 110px;
+            margin-left: auto;
+            @include gra-blue;
+            color: rgb(247, 247, 247);
+            @include font(13, 0, 26, 500);
+            line-height: normal;
+            text-align: center;
+          }
+        }
+        table {
+          @include font(13, 0, 26, 500);
+          line-height: 1.5;
+          width: 325px;
+          margin-bottom: 20px;
+          @include mq("sp") {
+            width: 100%;
+          }
+          td {
+            padding: 0;
+            position: relative;
+            span {
+              position: absolute;
+              right: 0;
+            }
+            &:first-child {
+              width: 52px;
+            }
+          }
+        }
+        .text {
+          @include font(16, 0, 32, 400);
+          margin-bottom: 20px;
+        }
+        .iframe-wrap {
+          position: relative;
+          width: 100%;
+          padding-top: 56.756%; /* = height ÷ width × 100 */
+          iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
 }
 
 .pagenation {
-    width: 800px;
-    @include mq("pc") {
-        width: 95%;
-    }
-    box-shadow: 0px 15px 15px 0px rgba(112, 112, 112, .3);
-    padding-bottom: 15px;
-    margin: 0 auto 150px;
-    @include font(16, 0, 24, bold);
+  width: 800px;
+  @include mq("pc") {
+    width: 95%;
+  }
+  box-shadow: 0px 15px 15px 0px rgba(112, 112, 112, 0.3);
+  padding-bottom: 15px;
+  margin: 0 auto 150px;
+  @include font(16, 0, 24, bold);
+  text-align: center;
+  .current {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgb(16, 16, 16); /*背景色*/
+    color: rgb(255, 255, 255);
     text-align: center;
-    .current {
-        display: inline-block;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        background: rgb(16, 16, 16);/*背景色*/
-        color: rgb(255, 255, 255);
-        text-align:center;
-        line-height: 45px;
-    }
-    .page-numbers {
-        margin-right: 20px;
-    }
-    .next {
-        margin-left: 20px;
-        margin-right: 0;
-    }
+    line-height: 45px;
+  }
+  .page-numbers {
+    margin-right: 20px;
+  }
+  .next {
+    margin-left: 20px;
+    margin-right: 0;
+  }
 }
